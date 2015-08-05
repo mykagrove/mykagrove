@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://m.ichael.co.uk/jekyll/pixyll/2017/07/11/announcing-pixyll-version-2/</loc>
+    <lastmod>2017-07-11T00:00:00+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://m.ichael.co.uk/jekyll/pixyll/2017/06/10/see-pixyll-in-action/</loc>
+    <lastmod>2017-06-10T13:31:19+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://m.ichael.co.uk/jekyll/pixyll/2017/06/08/pixyll-has-pagination/</loc>
+    <lastmod>2017-06-08T12:21:29+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://m.ichael.co.uk/jekyll/pixyll/2014/06/09/so-what-is-jekyll/</loc>
+    <lastmod>2014-06-09T13:32:18+01:00</lastmod>
+  </url>
+  <url>
+    <loc>http://m.ichael.co.uk/about/</loc>
+  </url>
+  <url>
+    <loc>http://m.ichael.co.uk/contact/</loc>
+  </url>
+  <url>
+    <loc>http://m.ichael.co.uk/</loc>
+  </url>
+  <url>
+    <loc>http://m.ichael.co.uk/thanks/</loc>
+  </url>
+</urlset>
