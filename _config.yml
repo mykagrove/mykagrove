@@ -10,7 +10,7 @@ url:         "http://m.ichael.co.uk"
 google_analytics:
 
 # Optional features
-animated:           false
+animated:           true
 show_related_posts: false
 show_post_footers:  false
 show_social_icons:  false
@@ -20,11 +20,11 @@ show_social_icons:  false
 disqus_shortname:
 
 # Social icons
-github_username:
+github_username: entozoon
 stackoverflow_id:
-twitter_username:
+twitter_username: entozoon
 google_plus_id:
-linkedin_username:
+linkedin_username: michaelmorgancook
 angellist_username:
 medium_id:
 bitcoin_url:
