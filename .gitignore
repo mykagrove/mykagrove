@@ -1,4 +1,3 @@
-*.bat
 **.sass-cache
 _site
 .jekyll-metadata
