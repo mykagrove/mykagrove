@@ -5,6 +5,10 @@ author:      Michael Cook
 description: "Michael Cook's Projects and Assorted Whatnots"
 baseurl:     ""
 url:         "http://m.ichael.co.uk"
+timezone:    Europe/London
+# include: .htaccess (not included by default)
+exclude:     ["*.bat", "*.md"]
+#keep_files:
 
 # Google analytics
 google_analytics:
@@ -16,7 +20,6 @@ show_post_footers:  false
 show_social_icons:  false
 
 # Disqus post comments
-# (leave blank to disable Disqus)
 disqus_shortname:
 
 # Social icons
