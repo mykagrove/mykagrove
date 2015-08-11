@@ -8,7 +8,7 @@ categories: electronics raspberrypi
 Testing project layout.
 
 # When adding images use the assets like a baws:
-{% image test.jpg magick:resize:100x100 %}
+{% image test.jpg [resize:150x150] %}
 
 # Can link to asset files like:
 {{ 'test.jpg' | asset_path }}

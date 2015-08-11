@@ -19,3 +19,6 @@ gem install jekyll-assets
 gem install uglifier
 
 (re-open prompt)
+
+https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
+this might update soon to v3 but it's all buggy
