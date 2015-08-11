@@ -61,9 +61,9 @@ gems: ['jekyll-sitemap']
 assets:
   js_compressor:  uglifier
   css_compressor: sass
+  cache: false
 
 #assets:
-#  cache: false
 #  prefix: "/_assets"
 #  assets:
 #    - "*.jpg"

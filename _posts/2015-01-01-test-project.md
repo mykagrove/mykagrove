@@ -8,10 +8,13 @@ categories: electronics raspberrypi
 Testing project layout.
 
 # When adding images use the assets like a baws:
-{% image test.jpg [resize:150x150] %}
+{% image test.jpg [resize:50x50] %}
+
 
 # Can link to asset files like:
 {{ 'test.jpg' | asset_path }}
+
+https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
 
 There is a significant amount of subtle, yet precisely calibrated, styling to ensure
 that your content is emphasized while still looking aesthetically pleasing.
