@@ -8,7 +8,9 @@ categories: electronics raspberrypi
 Testing project layout.
 
 # When adding images use the assets like a baws:
+{% comment %}
 {% image test.jpg [resize:50x50] %}
+{% endcomment %}
 
 
 # Can link to asset files like:

@@ -18,5 +18,17 @@ http://docs.wand-py.org/en/0.2.4/guide/install.html
 
 (re-open prompt)
 
-https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
+(https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets)
 this might update soon to v3 but it's all buggy
+
+
+# IMPORTANT NOTE
+Github pages compiles jekyll stuff in safe mode, so can't use jekyll-assets or other plugins!
+However, the solution to this is create a 'source' branch (and make it default) to commit everything to, then have it only commit the _site folder to master branch. See below:
+
+# How to commit
+rake publish
+
+This uses Rakefile to commit to the two branches
+
+(http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html)
