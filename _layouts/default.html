@@ -9,7 +9,14 @@
 	<meta name="author" content="{{ site.author }}">
 	{% if page.categories %}<meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-	<link rel="alternate" type="application/rss+xml" title="RSS Feed for {{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl }}" />
+
+	<!--[if lte IE 8]>
+		<script> // IE8 html5 element support
+			document.createElement("header"); document.createElement("nav");
+			document.createElement("main");   document.createElement("footer");
+			document.createElement("section");
+		</script>
+	<![endif]-->
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	{% stylesheet site %}
@@ -34,8 +41,8 @@
 
 	</div>
 
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-	<script src="js/site.min.js"></script>
 	{% javascript site %}
 </body>
 </html>
