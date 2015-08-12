@@ -4,11 +4,6 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
-
-# Change your GitHub reponame
-GITHUB_REPONAME = "mykagrove/mykagrove.github.io"
-
-
 desc "Generate blog files"
 task :generate do
   Jekyll::Site.new(Jekyll.configuration({
@@ -32,7 +27,7 @@ task :publish => [:generate] do
     message = "Site updated at #{Time.now.utc}"
     system "echo 2"
     system "git commit -m #{message.inspect}"
-    system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
+    system "git remote add origin https://github.com/mykagrove/mykagrove.github.io"
     system "echo 3"
     system "git push origin master --force"
 

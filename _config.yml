@@ -7,7 +7,7 @@ baseurl:     ""
 url:         "http://m.ichael.co.uk"
 timezone:    Europe/London
 # include: .htaccess (not included by default)
-exclude:     ["*.bat", "README_*", "node_modules"]
+exclude:     ["*.bat", "README_*", "node_modules", "Rakefile"]
 #keep_files:
 
 # Google analytics
