@@ -10,7 +10,7 @@ Testing project layout.
 ### When adding images use the assets like a baws:
 
 #### Pixels (contain)
-{% image test.jpg alt="Test bro" [resize:50x50] %}
+{% image test.jpg [resize:50x50] alt="Test bro" %}
 
 #### Pixels (cover)
 {% image test.jpg alt="Test bro" [resize:50x50^] %}
