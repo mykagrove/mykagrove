@@ -35,7 +35,8 @@ jekyll serve
 
 # LINUX (presumably accessing external /media/sf_www files)
 # we've gotta force polling and not use serve (although it's possible, but not useful)
-jekyll build --watch --force_polling
+# while we're at it, stop it publishing posts from the future!
+jekyll build --watch --force_polling --future false
 
 
 #.. should happily be compiling into /_site

@@ -3,6 +3,8 @@ layout:     project
 title:      Project Test
 summary:    Just a cheeky test
 categories: electronics raspberrypi
+tags:
+published:  true
 ---
 
 Testing project layout.
@@ -32,6 +34,9 @@ https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
 
 
 https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+
+### Can link to other posts:
+<a href="{% post_url 2017-01-01-coming-soon %}">Like this</a>
 
 ### When I come to it, include some photos of my sketches, it's gold mate.
 Srs.
