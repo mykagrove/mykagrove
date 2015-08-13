@@ -7,16 +7,44 @@ categories: electronics raspberrypi
 
 Testing project layout.
 
-# When adding images use the assets like a baws:
+### When adding images use the assets like a baws:
+
+#### Pixels (contain)
+{% image test.jpg alt="Test bro" [resize:50x50] %}
+
+#### Pixels (cover)
+{% image test.jpg alt="Test bro" [resize:50x50^] %}
+
+#### Pixels (force)
+{% image test.jpg alt="Test bro" [resize:!50x50] %}
+
+#### Percent (contain)
+{% image test.jpg alt="Test bro" [resize:25%] %}
+
 {% comment %}
-{% image test.jpg [resize:50x50] %}
 {% endcomment %}
 
 
-# Can link to asset files like:
+### Can link to asset files like:
 {{ 'test.jpg' | asset_path }}
 
 https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
+
+
+https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+
+### When I come to it, include some photos of my sketches, it's gold mate.
+Srs.
+
+
+# \#
+
+## \#\#
+
+### \#\#\#
+
+#### \#\#\#\#
+
 
 There is a significant amount of subtle, yet precisely calibrated, styling to ensure
 that your content is emphasized while still looking aesthetically pleasing.

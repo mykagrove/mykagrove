@@ -1,0 +1,2 @@
+imagemagick is fucked, no matter what version I install it doesn't compile right on commandline.
+it would be fine if I wasn't using jekyll-assets, but it's worth it for that.. use a VM for compilation instead

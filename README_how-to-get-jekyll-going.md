@@ -1,13 +1,32 @@
 (Install ruby first if need be)
 
+gem install jekyll
+
+# linux (if need be)
+sudo apt-get install nodejs
+# windows (install node normally)
+
+# if using jekyll-assets - try installing manually on windows although it's fewked, otherwise:
+sudo apt-get install imagemagick
+
 # install everything in the gemfile by running:
 gem install bundle
 bundle
 
-jekyll build --watch
+# might need this
+bundle update
 
+# (need to reboot linux at this point)
+
+# WINDOWS
+jekyll build --watch
 # or better yet, this which is accessible at localhost:4000
 jekyll serve
+
+# LINUX (presumably accessing external /media/sf_www files)
+# we've gotta force polling and not use serve (although it's possible, but not useful)
+jekyll build --watch --force_polling
+
 
 #.. should happily be compiling into /_site
 #(if errors, do the stuff below)

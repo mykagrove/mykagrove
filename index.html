@@ -12,8 +12,12 @@ layout: default
         <p class="post-summary">
           {% if post.summary %}
             {{ post.summary }}
+
           {% else %}
+
+
             {{ post.excerpt }}
+
           {% endif %}
         </p>
       </div>
@@ -22,3 +26,4 @@ layout: default
 
   {% include pagination.html %}
 </div>
+
