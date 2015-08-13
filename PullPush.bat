@@ -2,9 +2,14 @@
 
 echo.
 echo  **** Committing source code ****
+echo.
 git config credential.helper store
 git add --all
 git commit -m '.'
+git pull origin source
+echo.
+echo  ****     We okay to push?     **
+pause
 git push origin source
 
 
@@ -15,6 +20,9 @@ cd _site
 git config credential.helper store
 git add --all
 git commit -m '.'
-git push origin source
+git pull origin master
+echo  ****     We okay to push?     **
+pause
+git push origin master
 
 pause
