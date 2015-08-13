@@ -1,5 +1,7 @@
 @echo off
 
+git config credential.helper store
+
 git add --all
 git commit -m '.'
 git push origin source
