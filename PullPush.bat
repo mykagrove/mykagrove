@@ -22,6 +22,7 @@ git config credential.helper store
 git add --all
 git commit -m '.'
 git pull origin master
+echo.
 echo  ****     We okay to push?     **
 echo.
 pause
