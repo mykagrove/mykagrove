@@ -9,6 +9,7 @@ git commit -m '.'
 git pull origin source
 echo.
 echo  ****     We okay to push?     **
+echo.
 pause
 git push origin source
 
@@ -22,6 +23,7 @@ git add --all
 git commit -m '.'
 git pull origin master
 echo  ****     We okay to push?     **
+echo.
 pause
 git push origin master
 
