@@ -4,6 +4,10 @@ git add --all
 git commit -m '.'
 git push origin source
 
-rake publish
+cd _site
+
+git add --all
+git commit -m '.'
+git push origin source
 
 pause

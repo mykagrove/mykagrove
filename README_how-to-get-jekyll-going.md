@@ -1,3 +1,13 @@
+
+# Setting up this site initially
+git clone https://github.com/mykagrove/mykagrove.github.io.git
+git checkout source
+# then within that, make a folder called _site .. go into it and
+git clone https://github.com/mykagrove/mykagrove.github.io.git
+git checkout master
+
+That way you've got a folder which is the site source and inside that, a folder to which the site compiles.. which is actually the master branch of the whole repo. IM A GENIUS
+
 (Install ruby first if need be)
 
 gem install jekyll
@@ -46,8 +56,11 @@ Github pages compiles jekyll stuff in safe mode, so can't use jekyll-assets or o
 However, the solution to this is create a 'source' branch (and make it default) to commit everything to, then have it only commit the _site folder to master branch. See below:
 
 # How to commit
+
+(Actually, IGNORE THIS BIT:)
 rake publish
-
 This uses Rakefile to commit to the two branches
-
 (http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html)
+
+Push.bat
+(it runs git commit to the source branch in this folder, then CDs into _site and commits that to master)
