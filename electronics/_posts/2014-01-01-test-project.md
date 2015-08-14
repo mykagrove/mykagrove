@@ -1,11 +1,10 @@
 ---
 layout:     project
-title:      Project Test
+title:      Project Test old
+permalink:  /:categories/:title.html
 summary:    Just a cheeky test
-categories: electronics
+category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
-published:  true
-date:       2015-08-14
 ---
 
 Testing project layout.
@@ -24,8 +23,6 @@ Testing project layout.
 #### Percent (contain)
 {% image test.jpg alt="Test bro" [resize:25%] %}
 
-{% comment %}
-{% endcomment %}
 
 
 ### Can link to asset files like:
@@ -37,7 +34,10 @@ https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
 https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 
 ### Can link to other posts:
+[disabled while figuring out directory structure]
+{% comment %}
 <a href="{% post_url 2017-01-01-coming-soon %}">Like this</a>
+{% endcomment %}
 
 ### When I come to it, include some photos of my sketches, it's gold mate.
 Srs.

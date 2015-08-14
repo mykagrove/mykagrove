@@ -1,0 +1,284 @@
+
+
+// Break point mixins with a mind to get rid of _adaptivity.scss one day!
+@mixin xs-plus { // should never be needed
+	@media (min-width: 0px) { // must be 0px not 0 for respond.js to work (ie8)!
+		@content;
+	}
+}
+@mixin sm-plus {
+	@media (min-width: $screen-sm-min) {
+		@content;
+	}
+}
+@mixin md-plus {
+	@media (min-width: $screen-md-min) {
+		@content;
+	}
+}
+@mixin lg-plus { // same as lg
+	@media (min-width: $screen-lg-min) {
+		@content;
+	}
+}
+
+@mixin xs {
+	@media (max-width: $screen-xs-max) {
+		@content;
+	}
+}
+@mixin sm {
+	@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+		@content;
+	}
+}
+@mixin md {
+	@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+		@content;
+	}
+}
+@mixin lg {
+	@media (min-width: $screen-lg-min) {
+		@content;
+	}
+}
+// Pairs of widths
+@mixin xs-sm {
+	@media (max-width: $screen-sm-max) {
+		@content;
+	}
+}
+@mixin xs-md {
+	@media (max-width: $screen-md-max) {
+		@content;
+	}
+}
+@mixin sm-md {
+	@media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+		@content;
+	}
+}
+@mixin sm-lg {
+	@include sm-plus { @content };
+}
+@mixin md-lg { // shouldn't be needed (.md-plus)
+	@include md-plus { @content };
+}
+
+@mixin content-box() {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+@mixin border-box() {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+@mixin user-select-none() {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+@mixin absolutely($child: '*') {
+	position: relative;
+
+	/*@if $child == '' {
+		$child: '*';
+	}*/
+	#{$child} {
+		position: absolute;
+		//top: 0;
+		//left: 0;
+	}
+}
+
+// Horizontal fill classes/mixins
+@mixin fill() {
+	clear: both;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+}
+// Full is not fill!
+// Fill always fills it up, full gets full after a while
+@mixin full() {
+	@include fill();
+
+	width: auto;
+	max-width: 100%;
+}
+
+// full image, but centrally aligned if small
+@mixin full--center() {
+	@include full();
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.fill { @include fill(); }
+.full { @include full(); }
+.full--center { @include full--center(); }
+//img.full { float: left; } // for clearing
+
+
+// Usage:
+// @include hoveropacity();
+@mixin hoveropacity($opacity: 0.75, $speed: 0.1s) {
+	@include animate(opacity, $speed, ease-in-out);
+
+	@include attention { opacity: $opacity; }
+
+	// Fix a chrome rendering bug (full images in <a>)
+	-webkit-transform: translateZ(0);
+}
+
+// Output font-size in pixels and rems for compatible browsers
+@mixin font-size($pixels: 14) {
+	font-size: $pixels + px;
+	font-size: ($pixels / 10) + rem;
+}
+@mixin fs($pixels: 14) { // same as above
+	font-size: $pixels + px;
+	font-size: ($pixels / 10) + rem;
+}
+
+// Mixin to replace &:hover, with the corresponding active and focus
+@mixin attention() {
+	&:hover,
+	&:active,
+	&:focus {
+		@content;
+	}
+}
+
+/**
+ * Function to show appropriate retina images when suitable
+ * e.g. @include retina('../images/loading', 200px, 100px, 'gif');
+ * would display loading.gif, or loading@2x.gif (which must exist)
+ * optional background-repeat property.
+ *
+ * @param $image  background image
+ * @param $w      width of the non-retina image
+ * @param $h      height of the non-retina image
+ * @param $type   image file extension, defaults to 'png'
+ * @param $repeat background-repeat
+ */
+// Usage:
+// @include retina('../img/bullet', 5px, 5px, 'png', no-repeat, left, 8px);
+@mixin retina($image, $w: auto, $h: auto, $type: 'png', $repeat: no-repeat, $position-x: 0, $position-y: 0) {
+	background-image: url($image + '.' + $type);
+	background-repeat: $repeat;
+	background-size: $w $h; // stripped important
+	background-position: $position-x $position-y;
+
+  //@media all and (-webkit-min-device-pixel-ratio : 1.5) {
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (min--moz-device-pixel-ratio: 1.5),
+	only screen and (-o-device-pixel-ratio: 3/2),
+	only screen and (min-device-pixel-ratio: 1.5) {
+		$x2 : $image + '@2x.' + $type;
+		background-image: url($x2); // stripped important
+		//background-repeat: $repeat;
+	}
+}
+
+
+// Linear gradient starting from the top, right, bottom or left
+// Usage:
+// @include linear-gradient(#759d29, #5d7630, top); // top, right, bottom or left
+@mixin linear-gradient($from, $to, $align: top) {
+	// Fallback colour
+	background-color: $to;
+
+	// Avoid any alignment issues
+	@if $align==bottom or $align==right { $temp: $from; $from: $to; $to: $temp; }
+	@if $align==bottom { $align: top }
+	@if $align==right { $align: left }
+
+	// General browsers
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient($align, $from, $to);
+	background-image:    -moz-linear-gradient($align, $from, $to);
+	background-image:     -ms-linear-gradient($align, $from, $to);
+	background-image:      -o-linear-gradient($align, $from, $to);
+	background-image:         linear-gradient($align, $from, $to);
+
+	// IE8-9
+	$alignIE: "";
+	@if $align==left or $align==right { $alignIE: ",GradientType=1"; }
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr="+$from+",EndColorStr="+$to+$alignIE+")";
+
+	// IE6-8 (bad practice)
+	//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+// Usage:
+// @include text-gradient(#a3d728, #5e7831, top);
+@mixin text-gradient($fromColor, $toColor, $align: top) {
+	// (CSS3 Only)
+	background: -webkit-linear-gradient($align, $fromColor, $toColor);
+	background: linear-gradient($align, $fromColor, $toColor);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+
+// Usage:
+// @include animate(all, 0.2s, ease-in-out);
+// NOTE: This is no longer called transition, due to a conflict with _vendor-prefixes.scss
+@mixin animate($property, $time, $method: ease-in-out, $extras: null) {
+	-webkit-transition: $property $time $method $extras;
+		-moz-transition: $property $time $method $extras;
+		 -ms-transition: $property $time $method $extras;
+		  -o-transition: $property $time $method $extras;
+			  transition: $property $time $method $extras;
+}
+
+
+/* Usage:
+	@include fa('\F13A');
+	&:before {
+		top: 0; right: 0;
+		color: #55f;
+		-webkit-text-fill-color: #55f;
+		@include fs(14);
+	}
+*/
+@mixin fa($char, $position: before) {
+	position: relative;
+	&:#{$position} {
+		content: "#{$char} ";
+		position: absolute;
+		font-family: fontawesome;
+		font-style: normal;
+		font-weight: normal;
+		// underline must be set, then unset - ie8 fix
+		text-decoration: underline;
+	}
+	&:before {
+		text-decoration: none;
+	}
+}
+
+/* Usage
+@include hover {
+	...
+}
+*/
+@mixin hover {
+	&:hover, &:focus {
+		@content;
+	}
+}
