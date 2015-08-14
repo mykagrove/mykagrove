@@ -2,9 +2,10 @@
 layout:     project
 title:      Project Test
 summary:    Just a cheeky test
-categories: electronics raspberrypi
-tags:
+categories: electronics
+tags:       electronics rpi raspberrypi chiptunes
 published:  true
+date:       2015-08-14
 ---
 
 Testing project layout.
