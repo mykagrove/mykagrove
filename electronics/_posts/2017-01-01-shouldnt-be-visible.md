@@ -1,6 +1,6 @@
 ---
 layout:     project
-title:      Project Test future
+title:      Future (shouldn't be visible)
 permalink:  /:categories/:title.html
 summary:    Just a cheeky test
 category:   electronics

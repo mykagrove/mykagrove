@@ -8,7 +8,8 @@ url:         "http://m.ichael.co.uk"
 timezone:    Europe/London
 # include: .htaccess (not included by default)
 exclude:     ["*.bat", "README_*", "NOTE_*", "node_modules", "gemfile", "Gemfile.lock"]
-#keep_files:
+#keep_files:  ["_assets/images"]
+
 
 # Google analytics
 google_analytics:
