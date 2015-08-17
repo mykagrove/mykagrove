@@ -2,8 +2,11 @@
 # Setting up this site initially
 git clone https://github.com/mykagrove/mykagrove.github.io.git
 git checkout source
-# then within that, make a folder called _site .. go into it and
+# check it out again within, rename to _site and switch it to master branch::
+cd mykagrove.github.io
 git clone https://github.com/mykagrove/mykagrove.github.io.git
+move mykagrove.github.io _site
+cd _site
 git checkout master
 
 That way you've got a folder which is the site source and inside that, a folder to which the site compiles.. which is actually the master branch of the whole repo. IM A GENIUS
