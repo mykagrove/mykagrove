@@ -2,3 +2,4 @@
 _site
 .jekyll-metadata
 .jekyll-assets-cache
+.bower_components

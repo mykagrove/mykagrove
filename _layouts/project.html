@@ -2,6 +2,20 @@
 layout: default
 ---
 
+
+What I want here is just an include to a banner.html file
+then within that, some tasty foreaches that resize the images from variables, etc etc.
+
+&gt;{{ page.banner }}&lt;
+
+HERE{{ page.bleep }}MATE
+
+{% if page.banner %}
+	{% for image in page.banner %}
+		<img src="{{ image }}" />
+	{% endfor %}
+{% endif %}
+
 <article class="project">
 	{{ content }}
 </article>

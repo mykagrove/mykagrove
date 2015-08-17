@@ -5,7 +5,21 @@ permalink:  /:categories/:title.html
 summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
+banner:
+ - test.jpg
+ - test.jpg
 ---
+
+
+Ideally I want nothing here to do with banners
+HERE|{{ page.banner[0] image [resize:30x20] | asset_path }}|MATE
+
+
+When I've done that, carry on using htmltidy to theme up some really great looking
+<code>function proper() { console.log('code blocks'); }</code>
+It might be worth keeping inline snippets like that though ^ .. give them like
+<code class='beast'>a class to style a big block</code>
+
 
 Testing project layout.
 

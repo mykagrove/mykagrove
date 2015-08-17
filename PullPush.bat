@@ -5,7 +5,7 @@ echo  **** Committing source code ****
 echo.
 git config credential.helper store
 git add --all
-git commit -m '.'
+git commit -m "."
 git pull origin source
 echo.
 echo  ****     We okay to push?     **
@@ -20,7 +20,7 @@ echo.
 cd _site
 git config credential.helper store
 git add --all
-git commit -m '.'
+git commit -m "."
 git pull origin master
 echo.
 echo  ****     We okay to push?     **
