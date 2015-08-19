@@ -2,40 +2,6 @@
 layout: default
 ---
 
-
-{% comment %} ✓ {% endcomment %}
-{% image test.jpg alt="Logo" [resize:30x20] %}
-{{ page.test }}
-
-
-{% comment %}
-{{ page.test | append:' [resize:30x20]' | image }}
-{% endcomment %}
-
-
-{% comment %}
-
-
-What I want here is just an include to a banner.html file
-then within that, some tasty foreaches that resize the images from variables, etc etc.
-
-
-
-{{ page.test | append:' [resize:30x20]' | image }}
-
-&gt;{{ page.banner }}&lt;
-
-HERE{{ page.bleep }}MATE
-
-{% if page.banner %}
-	{% for image in page.banner %}
-		<img src="{{ image }}" />
-	{% endfor %}
-{% endif %}
-
-{% endcomment %}
-
-
 <article class="project">
 	{{ content }}
 </article>

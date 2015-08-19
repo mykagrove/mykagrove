@@ -15,24 +15,10 @@ banner:
 {% include banner.md %}
 
 
-{{ page.test | append:' [resize:30x20]' | image }}
 
 
 
-
-
-{% comment %} ✓ {% endcomment %}
-{{ page.test | asset_path }}
-
-
-Ideally I want nothing here to do with banners
-{% comment %}
-HERE|{{ page.banner[0] image [resize:30x20] | asset_path }}|MATE
-{% endcomment %}
-
-
-
-
+..
 
 When I've done that, carry on using htmltidy to theme up some really great looking
 <code>function proper() { console.log('code blocks'); }</code>
