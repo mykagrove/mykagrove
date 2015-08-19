@@ -1,18 +1,37 @@
 ---
 layout:     project
-title:      Project Test old
+title:      Project Test Current
 permalink:  /:categories/:title.html
 summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
+test: test.jpg
 banner:
  - test.jpg
  - test.jpg
 ---
 
 
+{% include banner.md %}
+
+
+{{ page.test | append:' [resize:30x20]' | image }}
+
+
+
+
+
+{% comment %} ✓ {% endcomment %}
+{{ page.test | asset_path }}
+
+
 Ideally I want nothing here to do with banners
+{% comment %}
 HERE|{{ page.banner[0] image [resize:30x20] | asset_path }}|MATE
+{% endcomment %}
+
+
+
 
 
 When I've done that, carry on using htmltidy to theme up some really great looking
