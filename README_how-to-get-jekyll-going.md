@@ -13,8 +13,6 @@ That way you've got a folder which is the site source and inside that, a folder 
 
 (Install ruby first if need be)
 
-gem install jekyll
-
 # linux (if need be)
 sudo apt-get install nodejs
 # windows (install node normally)
@@ -22,11 +20,14 @@ sudo apt-get install nodejs
 # if using jekyll-assets - try installing manually on windows although it's fewked, otherwise:
 sudo apt-get install imagemagick
 
-# install everything in the gemfile by running:
-gem install bundle
-bundle
+# install bundler
+gem install bundler
+# ^ in the VM if using one!!
 
-# might need this
+# install everything in the gemfile by running:
+bundle install
+# ^ in the VM if using one!! See troubleshooting if problems (likely)
+# NOTE: if you've installed once, it locks versions so you have to use:
 bundle update
 
 # (need to reboot linux at this point)
@@ -68,3 +69,18 @@ This uses Rakefile to commit to the two branches
 
 Push.bat
 (it runs git commit to the source branch in this folder, then CDs into _site and commits that to master)
+
+
+# TROUBLESHOOTING (LINUX)
+# ruby not up to date? .. install 1.9.3 on ubuntu:
+sudo apt-get upgrade ruby
+# ruby still not up to date enough? jekyll-gist needs >=ruby 2.0 (fuck sake!)
+sudo apt-get remove ruby2.1* ruby1.9.1 libruby1.9.1 && sudo apt-get autoremove
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get update
+sudo apt-get install ruby2.2
+ruby -v
+# Should be: ruby 2.2.2p95 (2015-04-13 revision 50295) [x86_64-linux-gnu]
+sudo gem install jekyll
+sudo gem install bundler
+bundler update

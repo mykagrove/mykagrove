@@ -56,14 +56,17 @@ redcarpet:
 permalink:    pretty
 paginate:     4
 sass:
-  style: compressed
-gems: ['jekyll-sitemap']
+#  style: compressed
+  style: nested
+gems:
+ - 'jekyll-sitemap'
+ - 'jekyll-press'
 
 assets:
+  cache: true
+  cachebust: none
   js_compressor:  uglifier
   css_compressor: sass
-  cachebust: hard
-  cache: false
 
 #assets:
 #  prefix: "/_assets"

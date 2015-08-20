@@ -5,25 +5,41 @@ permalink:  /:categories/:title.html
 summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
-test: test.jpg
-banner:
+gallery:
+ - test.jpg
  - test.jpg
  - test.jpg
 ---
 
 
-{% include banner.md %}
+{% include gallery.html %}
+
+
+
+~~~
+function sassWatch(data) {
+	var sassStyle = isProduction === true ? 'compressed' : 'expanded';
+
+	//gulp.src(data.watch)
+	//.pipe(watch({glob: data.watch, emitOnGlob: true, silent: true}, function() {
+
+	watch(data.watch, {emitOnGlob: true, silent: true}, function(file, cb) {
+
+	sassCompiling();
+
+	var css = rubySass(data.src, { sourcemap: true })
+~~~
+{: .beast data-mode="javascript"}
 
 
 
 
 
-..
+Inline code blocks too ``function proper() { console.log('code blocks'); }``
 
-When I've done that, carry on using htmltidy to theme up some really great looking
-<code>function proper() { console.log('code blocks'); }</code>
-It might be worth keeping inline snippets like that though ^ .. give them like
-<code class='beast'>a class to style a big block</code>
+
+
+
 
 
 Testing project layout.
@@ -86,21 +102,21 @@ Here's an example of some ruby code with line anchors.
 {% highlight ruby lineanchors %}
 # The most awesome of classes
 class Awesome < ActiveRecord::Base
-  include EvenMoreAwesome
+	include EvenMoreAwesome
 
-  validates_presence_of :something
-  validates :email, email_format: true
+	validates_presence_of :something
+	validates :email, email_format: true
 
-  def initialize(email, name = nil)
-    self.email = email
-    self.name = name
-    self.favorite_number = 12
-    puts 'created awesomeness'
-  end
+	def initialize(email, name = nil)
+		self.email = email
+		self.name = name
+		self.favorite_number = 12
+		puts 'created awesomeness'
+	end
 
-  def email_format
-    email =~ /\S+@\S+\.\S+/
-  end
+	def email_format
+		email =~ /\S+@\S+\.\S+/
+	end
 end
 {% endhighlight %}
 
@@ -108,8 +124,8 @@ Here's some CSS:
 
 {% highlight css %}
 .foobar {
-  /* Named colors rule */
-  color: tomato;
+	/* Named colors rule */
+	color: tomato;
 }
 {% endhighlight %}
 
@@ -124,14 +140,14 @@ This allows your content to have the proper informational and contextual hierarc
 
 ### There are lists, too
 
-  * Apples
-  * Oranges
-  * Potatoes
-  * Milk
+	* Apples
+	* Oranges
+	* Potatoes
+	* Milk
 
-  1. Mow the lawn
-  2. Feed the dog
-  3. Dance
+	1. Mow the lawn
+	2. Feed the dog
+	3. Dance
 
 ### Images look great, too
 
@@ -155,10 +171,10 @@ However, you need to inject html if you'd like a citation footer. I will be work
 hopefully sidestep this inconvenience.
 
 <blockquote>
-  <p>
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  </p>
-  <footer><cite title="Antoine de Saint-Exupéry">Antoine de Saint-Exupéry</cite></footer>
+	<p>
+		Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
+	</p>
+	<footer><cite title="Antoine de Saint-Exupéry">Antoine de Saint-Exupéry</cite></footer>
 </blockquote>
 
 ### There's more being added all the time

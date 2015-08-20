@@ -1,0 +1,8 @@
+
+{% if page.gallery %}
+<div class="gallery">
+{% for galleryimage in page.gallery %}
+<div>{{ galleryimage | append: ' [resize:40x30]' | image }}</div>
+{% endfor %}
+</div>
+{% endif %}
