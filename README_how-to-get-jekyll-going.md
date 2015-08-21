@@ -84,3 +84,4 @@ ruby -v
 sudo gem install jekyll
 sudo gem install bundler
 bundler update
+# Another possibility is trying https://github.com/postmodern/ruby-install
