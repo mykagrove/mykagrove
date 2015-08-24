@@ -1,0 +1,31 @@
+
+$colors: (
+	"primary": #0d1031,
+	"secondary": #002240,
+	"tertiary": black,
+	//"quaternary": #fc4237,
+	//"quinary": #09a5d8,
+	//"senary": #09a5d8,
+	//"septenary": #b3b3b3,
+	//"octonary": #c3d600,
+	//"nonary": #f78d0f,
+	//"warning": #fc4237,
+	"white": white,
+	"black": black
+);
+
+// Generate .color--primary, .background--primary, etc style classes
+@each $key, $value in $colors {
+	.color--#{$key} { &,* { color: $value; } }
+	.background--#{$key} { background: $value; }
+
+	.outline--#{$key} {
+		overflow: hidden;
+		border: 2px solid $value!important;
+	}
+	.fa--#{$key} {
+		.fa {
+			color: $value;
+		}
+	}
+}

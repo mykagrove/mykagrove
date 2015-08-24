@@ -282,3 +282,15 @@
 		@content;
 	}
 }
+
+
+.displace {
+	text-align: left;
+	text-indent: -9999px;
+}
+.displace--hard {
+	@extend .displace;
+	position: absolute;
+	left: 0;
+	visibility: hidden;
+}
