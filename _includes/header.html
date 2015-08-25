@@ -1,21 +1,41 @@
 <header class="header">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-6 col-md-3">
-				<a href="/" class="header__logo">{{ site.title }}</a>
+			<div class="col-xs-6 col-sm-8 col-sm-push-2">
+				<nav role="navigation" class="nav nav--primary">
+					{% for categorydata in site.categories %}
+					{% assign category = categorydata | first %}
+						<a class="nav__item nav__item--{{ category }}
+						{% if category == page.category %}
+							nav__item--active
+						{% endif %}
+						" href="/{{ category }}">{{ category | capitalize }}</a>
+					{% endfor %}
+				</nav>
+
+				<a href="/" class="header__logo" title="{{ site.title }}">
+					<img src="/img/header__motd.png" srcset="/img/header__motd.png 1x, /img/header__motd@2x.png 2x, /img/header__motd@3x.png 3x, " alt="" />
+				</a>
+
+				<nav role="navigation" class="nav nav--secondary">
+					<a class="nav__item nav__item--about
+					{% if page.title and page.title == 'About' %} nav__item--active{% endif %}
+					" href="/about/">About</a>
+					<a class="nav__item nav__item--contact
+					{% if page.title and page.title == 'Contact' %} nav__item--active{% endif %}
+					" href="/contact/">Contact</a>
+				</nav>
 			</div>
 
-			<div class="col-xs-6 hidden-md hidden-lg">
+			<div class="col-xs-6 xs-visible">
 				<i class="fa fa-menu"></i>[Menu]
 			</div>
 
-			<div class="col-xs-12 col-md-9">
-				<nav>
-					<a href="{{ site.baseurl }}/about/">About</a>
-					<a href="{{ site.baseurl }}/contact/">Contact</a>
-				</nav>
-
-				{% include social_links.html %}
+			<div class="col-xs-12 col-sm-2 col-sm-push-2">
+				<div class="header__social">
+					{% include social_links.html %}
+				</div>
 			</div>
 		</div>
+	</div>
 </header>

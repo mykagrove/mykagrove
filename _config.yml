@@ -1,6 +1,5 @@
 # Site settings
 title:       M.ichael.co.uk
-email:       michael@m.ichael.co.uk
 author:      Michael Cook
 description: "Michael Cook's Projects and Assorted Whatnots"
 baseurl:     ""
@@ -20,20 +19,11 @@ show_related_posts: false
 show_post_footers:  false
 show_social_icons:  false
 
-# Disqus post comments
-disqus_shortname:
-
-# Social icons
-github_username: entozoon
-stackoverflow_id:
-twitter_username: entozoon
-google_plus_id:
-linkedin_username: michaelmorgancook
-angellist_username:
-medium_id:
-bitcoin_url:
-paypal_url:
-flattr_button:
+# Social
+github: entozoon
+twitter: entozoon
+linkedin: michaelmorgancook
+email: michael@m.ichael.co.uk
 
 # Post sharing icons
 show_sharing_icons: false

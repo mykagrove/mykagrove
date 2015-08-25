@@ -1,0 +1,18 @@
+
+.nav {
+	&--primary { }
+	&--secondary { }
+
+	&__item {
+		@include fs(20);
+		display: inline-block;
+		padding: 0 10px;
+		&--active {
+			font-weight: bold;
+			//color: adjust-color(map-get($colors, quaternary), $lightness: 10%, $saturation: -10%);
+			&, &:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

@@ -145,13 +145,38 @@
 }
 
 // Output font-size in pixels and rems for compatible browsers
-@mixin font-size($pixels: 14) {
+@mixin fs($pixels: 14) { // same as above
 	font-size: $pixels + px;
 	font-size: ($pixels / 10) + rem;
 }
 @mixin fs($pixels: 14) { // same as above
 	font-size: $pixels + px;
 	font-size: ($pixels / 10) + rem;
+}
+
+// Set all the font sizes! (for each responsive size)
+// Usage: Don't use directly, instead use res mixin like this:
+// @include res(fs,12,18,20,22);
+@mixin fsres($xs, $sm:$xs, $md:$sm, $lg:$md) {
+	@include xs { @include fs($xs); }
+	@include sm { @include fs($sm); }
+	@include md { @include fs($md); }
+	@include lg { @include fs($lg); }
+}
+
+// Set all the property values! (for each responsive size)
+// Usage:
+// @include res(margin-bottom,12,18,20,22);
+@mixin res($property, $xs, $sm:$xs, $md:$sm, $lg:$md) {
+	@if $property == fs {
+		@include fsres($xs, $sm, $md, $lg);
+	}
+	@else {
+		@include xs { #{$property}:$xs }
+		@include sm { #{$property}:$sm }
+		@include md { #{$property}:$md }
+		@include lg { #{$property}:$lg }
+	}
 }
 
 // Mixin to replace &:hover, with the corresponding active and focus
@@ -236,7 +261,7 @@
 
 
 // Usage:
-// @include animate(all, 0.2s, ease-in-out);
+// @include animate(all, 0.1s, ease-in-out);
 // NOTE: This is no longer called transition, due to a conflict with _vendor-prefixes.scss
 @mixin animate($property, $time, $method: ease-in-out, $extras: null) {
 	-webkit-transition: $property $time $method $extras;
@@ -281,16 +306,4 @@
 	&:hover, &:focus {
 		@content;
 	}
-}
-
-
-.displace {
-	text-align: left;
-	text-indent: -9999px;
-}
-.displace--hard {
-	@extend .displace;
-	position: absolute;
-	left: 0;
-	visibility: hidden;
 }

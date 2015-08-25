@@ -3,7 +3,7 @@ $colors: (
 	"primary": #0d1031,
 	"secondary": #002240,
 	"tertiary": black,
-	//"quaternary": #fc4237,
+	"quaternary": #5555ff,
 	//"quinary": #09a5d8,
 	//"senary": #09a5d8,
 	//"septenary": #b3b3b3,
@@ -13,6 +13,9 @@ $colors: (
 	"white": white,
 	"black": black
 );
+
+$link-hover-decoration: none; // default is underline, which is daft when <a> are none by default
+$brand-primary: #5555ff;
 
 // Generate .color--primary, .background--primary, etc style classes
 @each $key, $value in $colors {

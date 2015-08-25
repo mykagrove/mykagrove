@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+
+
+/* Font Awesome
+ * (for use amongst sass rather than CDN)
+ */
+  @import "font-awesome/font-awesome";
+
+
 @import 'vars';
 @import 'bootstrap';
 @import 'mixins';
@@ -8,5 +16,4 @@
 //@import 'codemirror/theme/night';
 @import 'codemirror/theme/vibrant-ink';
 
-@import 'ui/header';
-@import 'ui/content';
+@import 'ui/*';

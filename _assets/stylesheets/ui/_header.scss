@@ -1,18 +1,53 @@
 .header {
 	padding: 5px 0;
-	@include md-plus {
-		padding: 10px 0;
-	}
 	overflow: hidden;
-	@include linear-gradient(map-get($colors, primary), black, top); // top, right, bottom or left
+	//@include linear-gradient(map-get($colors, primary), black, top);
+	@include linear-gradient(adjust-color(map-get($colors, primary), $lightness: 10%), black, top);
 	border-bottom: 2px solid adjust-color(map-get($colors, primary), $lightness: 25%, $saturation: -15%);
+	vertical-align: middle;
+
+	@include sm-plus {
+		padding: 10px 0;
+		text-align: center;
+	}
+
+	nav, &__logo { &, img {
+		display: inline-block;
+	} }
 
 	&__logo {
-		display: block;
-		@extend .displace;
-		background: url(../img/header__motd.png) no-repeat 0 0;
-		background-size: contain;
-		width: 100%;
-		min-height: 46px;
+		img {
+			@include res(max-width,69px,69px,69px*2,69px*2);
+		}
+	}
+
+
+	.nav__item,
+	&__social a {
+		//&, &--active:hover {
+		color: map-get($colors, quaternary);
+		//&:not(&--active) &:hover {
+		&:hover {
+			color: adjust-color(map-get($colors, quaternary), $lightness: 10%, $saturation: -10%);
+		}
+	}
+
+
+	&__social {
+		.social {
+			// Make a mixin for these:
+			-webkit-column-count: 3;
+			-moz-column-count: 3;
+			column-count: 3;
+			-webkit-column-gap: 10px;
+			-moz-column-gap: 10px;
+			column-gap: 10px;
+
+			text-align: right;
+			@include res(fs,18,22,24,30);
+			li {
+				display: inline-block;
+			}
+		}
 	}
 }
