@@ -28,4 +28,13 @@ echo.
 pause
 git push origin master
 
+
+echo.
+echo.
+echo ****************
+echo *  All done!!  *
+echo ****************
+echo.
+echo.
+
 pause
