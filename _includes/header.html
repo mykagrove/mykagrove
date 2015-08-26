@@ -3,6 +3,9 @@
 		<div class="row">
 			<div class="col-xs-6 col-sm-8 col-sm-push-2">
 				<nav role="navigation" class="nav nav--primary">
+					{% comment %}
+					This is how I originally loaded in the categories,
+					but I now believe I can just use site.pages (which can get icons, etc globally)
 					{% for categorydata in site.categories %}
 					{% assign category = categorydata | first %}
 						<a class="nav__item nav__item--{{ category }}
@@ -10,6 +13,19 @@
 							nav__item--active
 						{% endif %}
 						" href="/{{ category }}">{{ category | capitalize }}</a>
+					{% endfor %}
+					{% endcomment %}
+
+					{% for p in site.pages %}
+						{% if p.category %}
+							<a class="nav__item nav__item--{{ p.category }}
+							{% if p.category == page.category %}
+								nav__item--active
+							{% endif %}
+							" href="/{{ p.category }}">
+								{% if p.icon %}<i class="{{ p.icon }}"></i>{% endif %}{{ p.category | capitalize }}
+							</a>
+						{% endif %}
 					{% endfor %}
 				</nav>
 
