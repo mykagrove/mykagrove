@@ -1,53 +1,92 @@
 .header {
+	position: relative;
 	padding: 5px 0;
-	overflow: hidden;
+	overflow: visible;
 	//@include linear-gradient(map-get($colors, primary), black, top);
-	@include linear-gradient(adjust-color(map-get($colors, primary), $lightness: 10%), black, top);
-	border-bottom: 2px solid adjust-color(map-get($colors, primary), $lightness: 25%, $saturation: -15%);
+	@include linear-gradient(adjust-color(map-get($colors, primary), $lightness: -15%, $saturation: -35%), black, top);
+	//border-bottom: 2px solid adjust-color(map-get($colors, primary), $lightness: 35%, $saturation: -15%);
+	border-bottom: red;
 	vertical-align: middle;
 
 	@include sm-plus {
 		padding: 10px 0;
-		text-align: center;
+		text-align: left;
 	}
 
-	nav, &__logo { &, img {
+	&__logo { &, img {
 		display: inline-block;
 	} }
 
 	&__logo {
 		img {
-			@include res(max-width,69px,69px,69px*2,69px*2);
+			@include full;
+			//@include res(max-width,69px,69px,69px*2,69px*2);
+			@include stopAntiAliasing;
 		}
 	}
-
 
 	.nav__item,
 	&__social a {
 		//&, &--active:hover {
-		color: map-get($colors, quaternary);
+		color: adjust-color(map-get($colors, primary), $lightness: 30%, $saturation: 10%);
 		//&:not(&--active) &:hover {
 		&:hover {
-			color: adjust-color(map-get($colors, quaternary), $lightness: 10%, $saturation: -10%);
+			color: adjust-color(map-get($colors, primary), $lightness: 40%, $saturation: 0%);
 		}
 	}
 
+	&__mobile {
+		text-align: right;
+		@include xs {
+			position: absolute;
+			top: 50%;
+			margin-top: -70px*0.5;
+			right: 0;
+		}
+	}
+
+	&__social,
+	.nav__button--header {
+		display: inline-block;
+		line-height: 1;
+		@include fs(50);
+	}
 
 	&__social {
 		.social {
-			// Make a mixin for these:
-			-webkit-column-count: 3;
-			-moz-column-count: 3;
-			column-count: 3;
-			-webkit-column-gap: 10px;
-			-moz-column-gap: 10px;
-			column-gap: 10px;
-
-			text-align: right;
-			@include res(fs,18,22,24,30);
+			@include res(fs,inherit,22,24,30);
 			li {
 				display: inline-block;
+				@include xs { font-size: 50%; }
 			}
+		}
+		@include xs {
+			.social {
+				/*-webkit-column-count: 2;
+				-moz-column-count: 2;
+				column-count: 2;
+				-webkit-column-gap: $grid-gutter-width;
+				-moz-column-gap: $grid-gutter-width;
+				column-gap: $grid-gutter-width;
+				-moz-column-fill: balance;
+					  column-fill: balance;*/
+				li {
+					display: block;
+					float: left;
+					&:nth-child(2n+1) {
+						clear: left;
+					}
+				}
+			}
+		}
+	}
+
+	.nav__button--header {
+		background: black;
+		padding: 10px;
+		border-radius: 2px;
+		&, .fa {
+			color: adjust-color(map-get($colors, primary), $lightness: 30%, $saturation: 10%);
 		}
 	}
 }

@@ -1,7 +1,13 @@
 <header class="header">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-6 col-sm-8 col-sm-push-2">
+			<div class="col-xs-6 col-sm-2">
+				<a href="/" class="header__logo" title="{{ site.title }}">
+					<img src="/img/header__motd.png" srcset="/img/header__motd.png 1x, /img/header__motd@2x.png 2x, /img/header__motd@3x.png 3x, " alt="" />
+				</a>
+			</div>
+
+			<div class="col-xs-12 col-sm-6">
 				<nav role="navigation" class="nav nav--primary">
 					{% comment %}
 					This is how I originally loaded in the categories,
@@ -27,30 +33,24 @@
 							</a>
 						{% endif %}
 					{% endfor %}
-				</nav>
 
-				<a href="/" class="header__logo" title="{{ site.title }}">
-					<img src="/img/header__motd.png" srcset="/img/header__motd.png 1x, /img/header__motd@2x.png 2x, /img/header__motd@3x.png 3x, " alt="" />
-				</a>
-
-				<nav role="navigation" class="nav nav--secondary">
 					<a class="nav__item nav__item--about
 					{% if page.title and page.title == 'About' %} nav__item--active{% endif %}
-					" href="/about/">About</a>
+					" href="/about/"><i class="fa fa-user"></i>Info</a>
 					<a class="nav__item nav__item--contact
 					{% if page.title and page.title == 'Contact' %} nav__item--active{% endif %}
-					" href="/contact/">Contact</a>
+					" href="/contact/"><i class="fa fa-comments-o"></i>Contact</a>
 				</nav>
 			</div>
 
-			<div class="col-xs-6 xs-visible">
-				<i class="fa fa-menu"></i>[Menu]
-			</div>
-
-			<div class="col-xs-12 col-sm-2 col-sm-push-2">
-				<div class="header__social">
+			<div class="col-xs-6 col-sm-4 header__mobile">
+				<span class="header__social">
 					{% include social_links.html %}
-				</div>
+				</span>
+
+				<span class="nav__button nav__button--header visible-xs-inline-block">
+					<i class="fa fa-bars"></i>
+				</span>
 			</div>
 		</div>
 	</div>

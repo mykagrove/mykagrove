@@ -1,17 +1,39 @@
-var cursorTimeout, cursorStates, cursorStatesIndex;
 
 $(function() {
 
-	/* Create beasty code mirrors for any code blocks - created in markdown files in this fashion:
-	 *
-	 * ~~~
-	 * 	Code and such
-	 * ~~~
-	 * {: .beast data-mode="javascript"}
-	 *
-	 * Other useful modes are: clike (c), htmlmixed, sass, css, shell, vbscript (batch), xml, python, sql
-	 * NOTE: These will need to be added in as a // = require line at the top of this file!
-	 */
+	initMobileMenu();
+
+	beastyCode();
+
+	silliness();
+
+});
+
+
+/*
+ * Dead simple mobile nav menu button
+ * (could be expanded out to use generic .nav__button and nearby .nav in future)
+ */
+function initMobileMenu() {
+	$('.nav__button--header').length &&
+	$('.nav--primary').length &&
+	$('.nav__button--header').click(function() {
+		$('.nav--primary').stop().slideToggle();
+	});
+}
+
+
+/* Create beasty code mirrors for any code blocks - created in markdown files in this fashion:
+ *
+ * ~~~
+ * 	Code and such
+ * ~~~
+ * {: .beast data-mode="javascript"}
+ *
+ * Other useful modes are: clike (c), htmlmixed, sass, css, shell, vbscript (batch), xml, python, sql
+ * NOTE: These will need to be added in as a // = require line at the top of this file!
+ */
+function beastyCode() {
 	$('.beast code').length &&
 	$('.beast').each(function() {
 		// Grab the code and mode
@@ -40,8 +62,14 @@ $(function() {
 			codeElem.remove();
 		}
 	});
+}
 
 
+/*
+ * Let's throw a little bit of silliness into the mix
+ */
+var cursorTimeout, cursorStates, cursorStatesIndex;
+function silliness() {
 	cursorStates = [
 		"n-resize",
 		"ne-resize",
@@ -63,7 +91,5 @@ $(function() {
 	}, function() {
 		$('.header__logo').css('cursor', 'auto');
 		clearInterval(cursorTimeout);
-	})
-
-
-});
+	});
+}

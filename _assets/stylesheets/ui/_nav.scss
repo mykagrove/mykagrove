@@ -1,6 +1,5 @@
 
 .nav {
-	&--primary { }
 	&--secondary { }
 
 	&__item {
@@ -17,6 +16,34 @@
 		.fa {
 			text-decoration: none;
 			margin: 0 5px;
+		}
+	}
+
+	/*
+	 * Mobile nav dropdown
+	 */
+	@include xs {
+		.header &--primary {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: black;
+			z-index: map-get($z-indexes, nav--primary);
+		}
+		.header &--primary &__item {
+			display: block;
+			clear: both;
+		}
+	}
+
+	/*
+	 * Desktop nav dropdown overrides
+	 */
+	@include md-plus {
+		.header .nav--primary {
+			display: inline-block!important;
 		}
 	}
 }

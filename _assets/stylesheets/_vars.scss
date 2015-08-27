@@ -1,9 +1,9 @@
 
 $colors: (
-	"primary": #0d1031,
+	"primary": #327ee8,
 	"secondary": #002240,
 	"tertiary": black,
-	"quaternary": #5555ff,
+	//"quaternary": #5555ff,
 	//"quinary": #09a5d8,
 	//"senary": #09a5d8,
 	//"septenary": #b3b3b3,
@@ -15,7 +15,7 @@ $colors: (
 );
 
 $link-hover-decoration: none; // default is underline, which is daft when <a> are none by default
-$brand-primary: #5555ff;
+$brand-primary: map-get($colors, primary);
 
 // Generate .color--primary, .background--primary, etc style classes
 @each $key, $value in $colors {
@@ -32,3 +32,7 @@ $brand-primary: #5555ff;
 		}
 	}
 }
+
+$z-indexes: (
+	"nav--primary": 100
+);
