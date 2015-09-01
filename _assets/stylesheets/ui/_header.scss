@@ -52,9 +52,7 @@ $nav__fa--bottom: #DAC68D;
 
 		&:hover {
 		//&:hover .fa {
-			background: none;
-			-webkit-background-clip: initial;
-			-webkit-text-fill-color: initial;
+			@extend %flatten-text-gradient;
 		}
 		&:hover {
 			color: $motd--bottom;
@@ -76,15 +74,14 @@ $nav__fa--bottom: #DAC68D;
 		@include animate(all, 0.3s, ease-in-out); // Might work in the future, who knows?
 	}
 
-	&__mobile {
-		text-align: right;
+	.nav__item {
 		@include xs {
-			position: absolute;
-			top: 50%;
-			margin-top: -70px*0.5;
-			right: 0;
+			// force flat colour on
+			@include flatten-text-gradient();
+			color: $motd--bottom;
 		}
 	}
+
 
 	&__social,
 	.nav__button--header {
@@ -94,15 +91,23 @@ $nav__fa--bottom: #DAC68D;
 	}
 
 	&__social {
+		text-align: right;
 		.social {
+			margin: 0;
 			@include res(fs,inherit,22,24,30);
 			li {
 				display: inline-block;
-				@include xs { font-size: 50%; }
 			}
 		}
+
 		@include xs {
+			position: absolute;
+			top: 50%;
+			margin-top: -50px*0.5*2*0.5; // one line of 25px chars
+			right: 0;
+			padding-right: 50px + 5px;
 			.social {
+				float: right;
 				/*-webkit-column-count: 2;
 				-moz-column-count: 2;
 				column-count: 2;
@@ -110,10 +115,11 @@ $nav__fa--bottom: #DAC68D;
 				-moz-column-gap: $grid-gutter-width;
 				column-gap: $grid-gutter-width;
 				-moz-column-fill: balance;
-					  column-fill: balance;*/
+				column-fill: balance;*/
 				li {
 					display: block;
 					float: left;
+					font-size: 50%;
 					&:nth-child(2n+1) {
 						clear: left;
 					}
@@ -122,12 +128,35 @@ $nav__fa--bottom: #DAC68D;
 		}
 	}
 
+
 	.nav__button--header {
+		/*
 		background: black;
-		padding: 10px;
+		padding: 5px;
+		height: 50px;
+		vertical-align: middle;
+		@include fs(30);
 		border-radius: 2px;
 		&, .fa {
+		}
+		*/
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-radius: 2px;
+		background: black;
+		cursor: pointer;
+		width: 50px;
+		height: 100%;
+		.fa {
+			position: absolute;
+			display: block;
+			line-height: 1;
+			text-align: center;
+			top: 50%; left: 0; right: 0;
+			margin-top: -30px*0.5;
 			color: adjust-color(map-get($colors, primary), $lightness: 30%, $saturation: 10%);
+			@include fs(30);
 		}
 	}
 }

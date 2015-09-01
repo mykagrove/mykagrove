@@ -145,13 +145,12 @@
 }
 
 // Output font-size in pixels and rems for compatible browsers
-@mixin fs($pixels: 14) { // same as above
-	font-size: $pixels + px;
-	font-size: ($pixels / 10) + rem;
-}
-@mixin fs($pixels: 14) { // same as above
-	font-size: $pixels + px;
-	font-size: ($pixels / 10) + rem;
+@mixin fs($pixels: 14) {
+	@if $pixels == inherit { font-size: inherit; }
+	@else {
+		font-size: $pixels + px;
+		font-size: ($pixels / 10) + rem;
+	}
 }
 
 // Set all the font sizes! (for each responsive size)
@@ -320,4 +319,17 @@
 	image-rendering: pixelated;                 // Chrome
 	image-rendering: optimize-contrast;         // CSS3 Proposed
 	-ms-interpolation-mode: nearest-neighbor;   // IE8+
+}
+
+/* Usage
+@include flatten-text-gradient;
+@extend %flatten-text-gradient;
+*/
+@mixin flatten-text-gradient {
+	background: none;
+	-webkit-background-clip: initial;
+	-webkit-text-fill-color: initial;
+}
+%flatten-text-gradient {
+	@include flatten-text-gradient;
 }

@@ -169,6 +169,9 @@ $general-features: true!default; // 3.3kb extra
 
 		// xs-row, sm-plus-row, etc.
 		.#{$prefix}row { @include row(); }
+
+		// atypical - for header positioning
+		.#{$prefix}inline-block { display: inline-block!important; float: none!important; }
 	}
 }
 

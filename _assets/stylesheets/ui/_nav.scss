@@ -1,5 +1,7 @@
 
 .nav {
+	&--primary { vertical-align: middle; }
+
 	&--secondary { }
 
 	&__item {
@@ -14,7 +16,7 @@
 			&, &:hover {
 				//text-decoration: underline;
 				// underline isn't compatible with clipped -webkit-linear-gradient, so:
-				@include md-plus {
+				@include sm-plus {
 					text-decoration: none;
 					border-bottom: 1px solid;
 				}
@@ -25,14 +27,21 @@
 			@extend .fa-fw;
 		}
 
-		@include md-plus {
-		margin: 0 0 0 2em; // room for .fa
-		.fa {
-			position: absolute;
-			top: 50%;
-			margin-top: -20px*0.5;
+		@include sm { margin-left: (18em / 14); } // room for .fa
+		@include md-plus { margin-left: 2em; } // room for .fa +
+		@include sm-plus {
+			.fa {
+				position: absolute;
+				top: 50%;
+				margin-top: -20px*0.5;
 				left: -(18em / 14); // .fa-fw width
 				@include fs(20);
+			}
+		}
+
+		@include sm {
+			&:nth-child(2n+1) {
+				clear: left;
 			}
 		}
 	}
@@ -64,8 +73,8 @@
 	/*
 	 * Desktop nav dropdown overrides
 	 */
-	@include md-plus {
-		.header .nav--primary {
+	@include sm-plus {
+		.header &--primary {
 			display: inline-block!important;
 		}
 	}

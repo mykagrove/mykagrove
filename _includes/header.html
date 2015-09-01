@@ -7,7 +7,7 @@
 				</a>
 			</div>
 
-			<div class="col-xs-12 col-sm-6 inline-block">
+			<div class="col-xs-12 col-sm-7 sm-plus-inline-block">
 				<nav role="navigation" class="nav nav--primary">
 					{% comment %}
 					This is how I originally loaded in the categories,
@@ -43,15 +43,13 @@
 				</nav>
 			</div>
 
-			<div class="col-xs-6 col-sm-4 header__mobile inline-block">
-				<span class="header__social">
-					{% include social_links.html %}
-				</span>
-
-				<span class="nav__button nav__button--header visible-xs-inline-block">
-					<i class="fa fa-bars"></i>
-				</span>
+			<div class="col-xs-6 col-sm-3 header__social inline-block">
+				{% include social_links.html %}
 			</div>
 		</div>
+	</div>
+
+	<div class="nav__button nav__button--header visible-xs">
+		<i class="fa fa-bars"></i>
 	</div>
 </header>
