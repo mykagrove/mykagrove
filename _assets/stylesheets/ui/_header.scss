@@ -1,11 +1,15 @@
+$motd--top: #4C8AFE;
+$motd--bottom: #9FD0FF;
+$nav__fa--top: #B58E02;
+$nav__fa--bottom: #DAC68D;
+
 .header {
 	position: relative;
 	padding: 5px 0;
 	overflow: visible;
 	//@include linear-gradient(map-get($colors, primary), black, top);
 	@include linear-gradient(adjust-color(map-get($colors, primary), $lightness: -15%, $saturation: -35%), black, top);
-	//border-bottom: 2px solid adjust-color(map-get($colors, primary), $lightness: 35%, $saturation: -15%);
-	border-bottom: red;
+	border-bottom: 2px solid $motd--bottom;
 	vertical-align: middle;
 
 	@include sm-plus {
@@ -27,12 +31,49 @@
 
 	.nav__item,
 	&__social a {
+		/*
 		//&, &--active:hover {
 		color: adjust-color(map-get($colors, primary), $lightness: 30%, $saturation: 10%);
 		//&:not(&--active) &:hover {
 		&:hover {
 			color: adjust-color(map-get($colors, primary), $lightness: 40%, $saturation: 0%);
 		}
+		*/
+
+		color: $motd--top;
+		background-image: -webkit-linear-gradient(
+			-87deg,
+			$motd--top 0%,
+			$motd--top 52%,
+			$motd--bottom 62%
+		);
+		// Must put these after setting background, here and every other time.
+		-webkit-background-clip: text; -webkit-text-fill-color: transparent;
+
+		&:hover {
+		//&:hover .fa {
+			background: none;
+			-webkit-background-clip: initial;
+			-webkit-text-fill-color: initial;
+		}
+		&:hover {
+			color: $motd--bottom;
+		}
+		.fa {
+			color: $nav__fa--top;
+			background-image: -webkit-linear-gradient(
+				-87deg,
+				$nav__fa--top 0%,
+				$nav__fa--top 52%,
+				$nav__fa--bottom 62%
+			);
+			-webkit-background-clip: text; -webkit-text-fill-color: transparent;
+		}
+		//&:hover .fa {
+		//	color: $nav__fa--bottom;
+		//}
+
+		@include animate(all, 0.3s, ease-in-out); // Might work in the future, who knows?
 	}
 
 	&__mobile {

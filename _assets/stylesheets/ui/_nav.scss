@@ -3,19 +3,37 @@
 	&--secondary { }
 
 	&__item {
-		@include fs(20);
+		position: relative;
 		display: inline-block;
-		padding: 0 10px;
+		padding: 1px 0;
+		margin: 0;
+		line-height: 1;
+		@include fs(20);
 		&--active {
 			font-weight: bold;
-			//color: adjust-color(map-get($colors, quaternary), $lightness: 10%, $saturation: -10%);
 			&, &:hover {
-				text-decoration: underline;
+				//text-decoration: underline;
+				// underline isn't compatible with clipped -webkit-linear-gradient, so:
+				@include md-plus {
+					text-decoration: none;
+					border-bottom: 1px solid;
+				}
 			}
 		}
 		.fa {
 			text-decoration: none;
-			margin: 0 5px;
+			@extend .fa-fw;
+		}
+
+		@include md-plus {
+		margin: 0 0 0 2em; // room for .fa
+		.fa {
+			position: absolute;
+			top: 50%;
+			margin-top: -20px*0.5;
+				left: -(18em / 14); // .fa-fw width
+				@include fs(20);
+			}
 		}
 	}
 
@@ -29,12 +47,17 @@
 			top: 100%;
 			left: 0;
 			right: 0;
+			padding: 0 0 10px;
 			background: black;
 			z-index: map-get($z-indexes, nav--primary);
-		}
-		.header &--primary &__item {
-			display: block;
-			clear: both;
+			.nav__item {
+				display: block;
+				clear: both;
+				padding: 10px 0;
+				.fa {
+					margin: 0 10px;
+				}
+			}
 		}
 	}
 
