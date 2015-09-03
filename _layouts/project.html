@@ -2,8 +2,16 @@
 layout: default
 ---
 
-<article class="project">
-	{{ content }}
-</article>
+{% include gallery.html %}
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<article class="project">
+				{{ content }}
+			</article>
+		</div>
+	</div>
+</div>
 
 

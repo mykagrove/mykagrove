@@ -7,6 +7,8 @@ $(function() {
 
 	silliness();
 
+	footerDate(); // because no php..
+
 });
 
 
@@ -92,4 +94,12 @@ function silliness() {
 		$('.header__logo').css('cursor', 'auto');
 		clearInterval(cursorTimeout);
 	});
+}
+
+/* Update the year (in footer) just in case
+ * Not using PHP, so {{ site.time | date: '%y' }} in markup only reflects last time it was compiled
+ */
+function footerDate() {
+	$('.js-year-update').length &&
+	$('.js-year-update').text((new Date).getFullYear());
 }

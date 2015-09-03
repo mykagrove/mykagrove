@@ -1,0 +1,35 @@
+
+/*
+ *   Layout Wrangling
+ */
+// Set the whole site's min/max widths
+html, body, .wrapper {
+	position: relative;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	height: auto;
+	width: 100%;
+	min-height: 100%;
+	min-width: 320px; // wouldn't be any good below that
+}
+html {
+	overflow: auto;
+}
+.container-fluid {
+	max-width: $grid-column-max-width * $grid-columns + $grid-gutter-width * ($grid-columns + 1);
+	//max-width: $grid-column-max-width * $grid-columns + $grid-gutter-width * ($grid-columns - 1);
+
+	/*
+	// Give containers extra padding, so they're equivalent to the full gutter width
+	padding-left: $grid-gutter-width;
+	padding-right: $grid-gutter-width;
+
+	@include xs-sm {
+		padding-left: $grid-gutter-width / 2;
+		padding-right: $grid-gutter-width / 2;
+	}
+	*/
+}
+
+

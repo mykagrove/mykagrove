@@ -2,7 +2,23 @@
 {% if page.gallery %}
 <div class="gallery">
 {% for galleryimage in page.gallery %}
-<div>{{ galleryimage | append: ' [resize:40x30]' | image }}</div>
+<div>
+{{ galleryimage | append: ' [resize:1230x690]' | asset_path }}
+	<a href="{{ galleryimage | asset_path }}">
+{% comment %}
+{{ galleryimage | append: ' [resize:1230x690]' | image }}
+{% endcomment %}
+	</a>
+</div>
+
+{% comment %}
+XxY  = background-size: contain
+XxY^ = background-size: cover but overflows
+Docs for resizing are here:
+https://github.com/jekyll-assets/jekyll-assets/tree/legacy#images-resizing
+http://www.imagemagick.org/Usage/resize/
+{% endcomment %}
+
 {% endfor %}
 </div>
 {% endif %}

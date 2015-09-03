@@ -1,3 +1,9 @@
+
+.content {
+	margin: 0 auto;
+	padding: $grid-gutter-width 0;
+}
+
 .skip {
 	position: absolute;
 	left: -1000px;

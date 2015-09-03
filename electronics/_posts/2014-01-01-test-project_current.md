@@ -6,13 +6,12 @@ summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
 gallery:
- - test.jpg
- - test.jpg
- - test.jpg
+ - test2.jpg
+ - test2.jpg
+ - test2.jpg
 ---
 
 
-{% include gallery.html %}
 
 
 

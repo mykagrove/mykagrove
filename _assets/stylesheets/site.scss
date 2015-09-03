@@ -17,4 +17,8 @@
 //@import 'codemirror/theme/night';
 @import 'codemirror/theme/vibrant-ink';
 
-@import 'ui/*';
+@import 'ui/content';
+@import 'ui/header';
+@import 'ui/layout';
+@import 'ui/nav';
+@import 'ui/typography';

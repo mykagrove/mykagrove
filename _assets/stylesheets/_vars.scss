@@ -1,4 +1,14 @@
 
+/*
+ *   Variables
+ */
+$grid-columns:              12;
+$grid-gutter-width:         30px;
+$grid-column-max-width: 	70px;
+
+
+$disableAdaptiveLayout: true; // stop auto-changing fixed widths for different sizes
+
 $colors: (
 	"primary": #327ee8,
 	"secondary": #002240,
