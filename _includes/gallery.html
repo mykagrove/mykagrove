@@ -3,8 +3,7 @@
 <div class="gallery">
 {% for galleryimage in page.gallery %}
 <div>
-{{ galleryimage | append: ' [resize:1230x690]' | asset_path }}
-	<a href="{{ galleryimage | asset_path }}">
+	<a href="{{ galleryimage | append: ' [resize:1230x690]' | asset_path }}">
 {% comment %}
 {{ galleryimage | append: ' [resize:1230x690]' | image }}
 {% endcomment %}

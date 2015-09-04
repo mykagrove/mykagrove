@@ -54,7 +54,8 @@ gems:
 
 assets:
   cache: true
-  # put checksum onto filenames. alternative is 'none'. (prevents hotlinking for images too)
+  # put checksum onto filenames. alternative is 'none'.
+  # prevents local cache as well as hotlinking and access to original image
   cachebust: hard
   js_compressor:  uglifier
   css_compressor: sass
