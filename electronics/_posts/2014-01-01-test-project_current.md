@@ -6,8 +6,8 @@ summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
 gallery-images:
- - file: white.jpg
-   alt: white
+ - file: test4.jpg
+   alt: test4
  - file: black.jpg
    alt: black
  - file: red.jpg

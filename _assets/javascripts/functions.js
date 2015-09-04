@@ -221,7 +221,7 @@ function colorGalleries() {
 		// Delve into the slide, grabbing the first image it comes across
 		if ($(this).find('img')) {
 			var image = $(this).find('img').first();
-			$(this).css('background-color', image.averageColor().hex);
+			$(this).css('background-color', image.averageColor(10000).hex);
 
 		}
 	});
