@@ -108,33 +108,29 @@ function initGalleries() {
 			dots: false
 		};
 
-		// add custom options
-		if ($(this).hasClass('gallery--dots') ||
-			$(this).hasClass('gallery--dots--nested')) {
-			options['dots'] = true;
-		}
-
 		if ($(this).hasClass('gallery--arrows')) {
 			options['arrows'] = true;
 		}
 
 		// link main and thumbnail galleries
-		if ($(this).hasClass('gallery--linked--main')) {
-			options['asNavFor'] = '.gallery--linked--thumbs';
+		if ($(this).hasClass('gallery--linked__main')) {
+			options['asNavFor'] = '.gallery--linked__thumbs';
 			options['infinite'] = true;// must be infinite
 			options['fade'] = true;
 			//options['swipe'] = true;
 			options['slidesToShow'] = 1;
 			options['slidesToScroll'] = 1;
 
+			/*
 			// If there are only a few items, double/triple them up to fill the page (at least 5)
 			// Seems silly but it cycles infinitely anyway. (same for --main and --thumbs)
 			var slides = $(this).html();
 			while ($(this).children().length < 4) {
 				$(this).append(slides);
 			}
+			*/
 		}
-		if ($(this).hasClass('gallery--linked--thumbs')) {
+		if ($(this).hasClass('gallery--linked__thumbs')) {
 
 			// If there is only one item, remove the thumbnails entirely
 			if ($(this).children().length < 2) {
@@ -142,30 +138,37 @@ function initGalleries() {
 				return;
 			}
 
+			/*
 			// If there are only a few items, double/triple them up to fill the page (at least 5)
 			// Seems silly but it cycles infinitely anyway. (same for --main and --thumbs)
 			var slides = $(this).html();
 			while ($(this).children().length < 4) {
 				$(this).append(slides);
 			}
+			*/
 
-			options['asNavFor'] = '.gallery--linked--main';
+			options['asNavFor'] = '.gallery--linked__main';
 			// centerMode can be false but you're not able to slide backward
 			options['adaptiveHeight'] = false;
-			options['centerMode'] = false;
+			if ($(this).children().length > 10) {
+				options['centerMode'] = true;
+			} else {
+				options['centerMode'] = false;
+			}
 			options['infinite'] = true; // must be infinite
 			options['variableWidth'] = false; // must be false
 			options['focusOnSelect'] = true;
 			options['swipe'] = false; // ought to stay false
 
-			var slidesToShow = [3,6,8,10]; // xs,sm,md,lg
+			var breakpoints = [3,6,8,10]; // xs,sm,md,lg
 
 			options['slidesToScroll'] = 1;
 		}
 
 		// Gallery options for gallery with data-gallery-breakpoints
 		if ($(this).attr('data-gallery-breakpoints')) {
-			var breakpoints = $(this).data('gallery-breakpoints');
+			breakpoints = $(this).data('gallery-breakpoints');
+			/*
 			// If there are less than 10 items, adjust slidesToShow or it breaks
 			var itemCount = $(this).children().length;
 			for (var i=0; i<breakpoints.length; i++) {
@@ -175,12 +178,14 @@ function initGalleries() {
 					breakpoints[i] = 1;
 				}
 			}
+			*/
 
 			options['responsive'] = [
 				{
 					breakpoint: sm, // xs-sm
 					settings: {
-						slidesToShow: breakpoints[0]
+						slidesToShow: breakpoints[0],
+						centerMode: true
 						//arrows: false
 					}
 				},
@@ -204,5 +209,20 @@ function initGalleries() {
 		$(this).slick(options);
 
 		$(window).trigger('resize'); // to make sure heights are set properly
+	});
+}
+
+
+
+function colorGalleries() {
+	if (typeof $.fn.averageColor === 'undefined') { console.log("Functions: average-color must be loaded!"); return; }
+	$('.gallery .slick-slide').length &&
+	$('.gallery .slick-slide').each(function() {
+		// Delve into the slide, grabbing the first image it comes across
+		if ($(this).find('img')) {
+			var image = $(this).find('img').first();
+			$(this).css('background-color', image.averageColor().hex);
+
+		}
 	});
 }

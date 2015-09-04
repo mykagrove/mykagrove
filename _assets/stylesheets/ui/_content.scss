@@ -1,35 +1,13 @@
 
 .content {
 	margin: 0 auto;
-	padding-top: $grid-gutter-width*0.5;
-	padding-bottom: $grid-gutter-width*0.5;
-	@include md-plus {
-		padding-top: $grid-gutter-width;
-		padding-bottom: $grid-gutter-width;
-	}
-}
 
-.skip {
-	position: absolute;
-	left: -1000px;
-	text-align: left;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-
-	&:focus {
-		top: 20px;
-		color: #000;
-		left: 5px;
-		z-index: 9999;
-		text-decoration: underline;
-		height: 35px;
-		width: auto;
-		padding: 0 15px;
-		background: #fff;
-		line-height: 35px;
-		-webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
-		box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+	> .container-fluid {
+		padding-top: $grid-gutter-width*0.5;
+		padding-bottom: $grid-gutter-width*0.5;
+		@include md-plus {
+			padding-top: $grid-gutter-width;
+			padding-bottom: $grid-gutter-width;
+		}
 	}
 }

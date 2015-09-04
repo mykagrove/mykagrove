@@ -6,8 +6,14 @@ summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
 gallery-images:
- - file: test2.jpg
-   alt: Test 2 alt text
+ - file: white.jpg
+   alt: white
+ - file: black.jpg
+   alt: black
+ - file: red.jpg
+   alt: red
+ - file: test3.jpg
+   alt: Test3 alt text
  - file: test.jpg
    alt: Test alt text
 ---
@@ -40,13 +46,12 @@ Inline code blocks too ``function proper() { console.log('code blocks'); }``
 
 
 
-
 Testing project layout.
 
 ### When adding images use the assets like a baws:
 
 #### Pixels (contain)
-{% image test.jpg [resize:50x50] alt="Test bro" %}
+{% image test.jpg alt="Test bro" [resize:50x50] %}
 
 #### Pixels (cover)
 {% image test.jpg alt="Test bro" [resize:50x50^] %}

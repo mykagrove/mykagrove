@@ -1,7 +1,9 @@
 
 
 {% if page.gallery-images %}
-<div class="gallery" style="display:none">
+<div class="gallery--linked__wrapper">
+
+<div class="gallery gallery--linked__main" style="display:none">
 {% for image in page.gallery-images %}
 <div>
 	<a href="{{ image.file | append: ' [resize:1230x690]' | asset_path }}">
@@ -19,5 +21,21 @@
 {% endcomment %}
 
 {% endfor %}
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+
+			<div class="gallery gallery--linked__thumbs gallery--arrows" style="display:none" data-gallery-breakpoints="[3,6,8,10]">
+{% for image in page.gallery-images %}
+				<div class="gallery__thumb" style="background-image:url({{ image.file | append: ' [resize:200x112^]' | asset_path }})"></div>
+{% endfor %}
+			</div>
+
+		</div>
+	</div>
+</div>
+
 </div>
 {% endif %}

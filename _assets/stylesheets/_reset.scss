@@ -3,3 +3,43 @@
 .block { display: block!important; }
 // typically for grid columns
 .inline-block { display: inline-block!important; float: none!important; }
+
+
+.displace {
+	text-align: left;
+	text-indent: -9999px;
+}
+.displace--hard {
+	@extend .displace;
+	position: absolute;
+	left: 0;
+	visibility: hidden;
+	/*&:active, &:focus, &:hover {
+	  text-indent: 0;
+	  }*/
+}
+
+.skip {
+	position: absolute;
+	left: -1000px;
+	text-align: left;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:focus {
+		top: 20px;
+		color: #000;
+		left: 5px;
+		z-index: 9999;
+		text-decoration: underline;
+		height: 35px;
+		width: auto;
+		padding: 0 15px;
+		background: #fff;
+		line-height: 35px;
+		-webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.75);
+	}
+}

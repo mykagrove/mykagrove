@@ -1,0 +1,233 @@
+
+@import "slick";
+
+.lazy-loading {
+	background-image: url('../img/ajax-loader.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.slick-loading { display: none!important; }
+/*
+.slick-loading {
+	display: block;
+	//background: #fff url('../img/ajax-loader.gif') center center no-repeat;
+	content: url("img/ajax-loader.gif");
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+*/
+
+.slick-dots { &, .content & {
+	padding: 0; margin: 0;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		list-style-type: none;
+		background: none;
+		padding: 0; margin: 0;
+		line-height: 1;
+		// button reset
+		button {
+			font-size: 0;
+			line-height: 0;
+			padding: 0; margin: 0;
+
+			display: block;
+
+			width: 24px;
+			height: 24px;
+			line-height: 1;
+
+			cursor: pointer;
+
+			color: transparent;
+			text-indent: -9999px;
+			border: 0;
+			outline: none;
+			background: transparent;
+
+			@include attention { outline: none; }
+
+			text-align: center;
+
+			@include fa('\F10C');
+			&:before {
+				text-align: center;
+				text-indent: 0;
+				top: 0; left: 0; right: 0;
+				color: #55f; -webkit-text-fill-color: #55f;
+				@include fs(18);
+				font-weight: normal;
+			}
+		}
+	}
+	.slick-active {
+		button {
+			@include fa('\F111');
+		}
+	}
+} }
+
+.slick-prev,
+.slick-next {
+	display: block;
+	position: absolute!important;
+	margin: 0; padding: 0;
+	top: 0;
+	bottom: 0;
+	width: 30px + 10px*2; // padding
+	outline: none;
+	border: none;
+	background: none;
+	@extend .displace;
+	opacity: 0.75;
+	z-index: 100;
+	@include attention {
+		outline: none;
+	}
+	&:hover,
+	&:active { // NOT focus. as it lingers!
+		opacity: 1;
+	}
+	&:before {
+		top: 50%;
+		margin-top: - 30px*0.5;
+		left: 0; right: 0;
+		text-align: center;
+		text-indent: 0;
+		line-height: 1;
+		color: #fff; -webkit-text-fill-color: #fff;
+
+		.n-items & {
+			color: map-get($colors, primary); -webkit-text-fill-color: map-get($colors, primary);
+		}
+
+		@include fs(30);
+	}
+
+	&.slick-disabled {
+		opacity: 0.1;
+	}
+}
+.slick-prev {
+	left: 7px;
+	.n-items & {
+		@include sm { left: -10px; }
+		@include md-plus { left: -25px; }
+	}
+	@include fa('\f137');
+}
+.slick-next {
+	right: 7px;
+	.n-items & {
+		@include sm { right: -10px; }
+		@include md-plus { right: -25px; }
+	}
+	@include fa('\f138');
+}
+
+
+.gallery {
+	// galleries in general - full width centered images
+	.slick-slide {
+		> a { display: block; }
+		img {
+			@extend .full--center;
+		}
+	}
+
+	background: map-get($colors, senary);
+
+	&.match-heights--parent { // home page
+		background: none;
+	}
+
+	&--home {
+		.slick-slide {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			padding: $grid-gutter-width;
+			@include sm { height: auto!important; }
+
+			h1,h2,h3,p {
+				color: white;
+				text-shadow: 0 3px 3px rgba(0,0,0,0.5);
+			}
+			h1 {
+				@include res(fs,42,44,46,48);
+				padding-bottom: 10px;
+			}
+		}
+
+		// Stop match heights interfering for smaller devices
+		.match-heights--child,
+		.match-heights--grandchild {
+			@include xs-sm {
+				height: auto!important;
+			}
+		}
+	}
+
+	&--border {
+		border: 10px solid map-get($colors, senary);
+	}
+
+	&--dots--nested {
+		.slick-slide {
+			padding-bottom: 50px;
+		}
+		.slick-dots {
+			position: absolute;
+			bottom: 50px; left: 0; right: 0;
+			height: 0; // allow buttons in slider to be clickable either side
+			overflow: visible;
+
+			li {
+				button {
+					&:before {
+						color: white; -webkit-text-fill-color: white;
+					}
+				}
+			}
+		}
+	}
+
+	&--linked__main,
+	&--linked__thumbs {
+		background: map-get($colors, senary);
+	}
+	&--linked__thumbs {
+		//padding-bottom: $grid-gutter-width;
+		.slick-slide {
+			cursor: pointer;
+
+			&.slick-current {
+				position: relative;
+				&:after {
+					content: " ";
+					position: absolute;
+					top: 0; bottom: 0;
+					left: 0; right: 0; // thumbs padding
+					border: 3px solid map-get($colors, primary);
+					//box-shadow: inset 0 0 1px 2px map-get($colors, secondary);
+				}
+			}
+		}
+	}
+
+
+	&__thumb {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		//width: 200px;
+		height: 112px;
+	}
+}
+
+
