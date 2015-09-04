@@ -5,12 +5,12 @@ permalink:  /:categories/:title.html
 summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
-gallery:
- - test2.jpg
- - test2.jpg
- - test2.jpg
+gallery-images:
+ - file: test2.jpg
+   alt: Test 2 alt text
+ - file: test.jpg
+   alt: Test alt text
 ---
-
 
 
 

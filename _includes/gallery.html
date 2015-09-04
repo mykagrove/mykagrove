@@ -1,21 +1,21 @@
 
-{% if page.gallery %}
-<div class="gallery">
-{% for galleryimage in page.gallery %}
+
+{% if page.gallery-images %}
+<div class="gallery" style="display:none">
+{% for image in page.gallery-images %}
 <div>
-	<a href="{{ galleryimage | append: ' [resize:1230x690]' | asset_path }}">
-{% comment %}
-{{ galleryimage | append: ' [resize:1230x690]' | image }}
-{% endcomment %}
+	<a href="{{ image.file | append: ' [resize:1230x690]' | asset_path }}">
+{{ image.file | append: ' [resize:1230x690]' | image }}
 	</a>
 </div>
 
 {% comment %}
-XxY  = background-size: contain
-XxY^ = background-size: cover but overflows
-Docs for resizing are here:
-https://github.com/jekyll-assets/jekyll-assets/tree/legacy#images-resizing
-http://www.imagemagick.org/Usage/resize/
+	1230x690  = background-size: contain
+	1230x690^ = background-size: cover but overflows
+
+	Docs for resizing are here:
+	https://github.com/jekyll-assets/jekyll-assets/tree/legacy#images-resizing
+	http://www.imagemagick.org/Usage/resize/
 {% endcomment %}
 
 {% endfor %}

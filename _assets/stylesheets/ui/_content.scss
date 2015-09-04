@@ -1,7 +1,12 @@
 
 .content {
 	margin: 0 auto;
-	padding: $grid-gutter-width 0;
+	padding-top: $grid-gutter-width*0.5;
+	padding-bottom: $grid-gutter-width*0.5;
+	@include md-plus {
+		padding-top: $grid-gutter-width;
+		padding-bottom: $grid-gutter-width;
+	}
 }
 
 .skip {
