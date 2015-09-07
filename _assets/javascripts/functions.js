@@ -113,23 +113,16 @@ function initGalleries() {
 		}
 
 		// link main and thumbnail galleries
+		// NOTE: There can be only one! (per page)
 		if ($(this).hasClass('gallery--linked__main')) {
 			options['asNavFor'] = '.gallery--linked__thumbs';
-			options['infinite'] = true;// must be infinite
+			options['infinite'] = true; // must be infinite
 			options['fade'] = true;
 			//options['swipe'] = true;
 			options['slidesToShow'] = 1;
 			options['slidesToScroll'] = 1;
-
-			/*
-			// If there are only a few items, double/triple them up to fill the page (at least 5)
-			// Seems silly but it cycles infinitely anyway. (same for --main and --thumbs)
-			var slides = $(this).html();
-			while ($(this).children().length < 4) {
-				$(this).append(slides);
-			}
-			*/
 		}
+
 		if ($(this).hasClass('gallery--linked__thumbs')) {
 
 			// If there is only one item, remove the thumbnails entirely
@@ -137,15 +130,6 @@ function initGalleries() {
 				$(this).remove();
 				return;
 			}
-
-			/*
-			// If there are only a few items, double/triple them up to fill the page (at least 5)
-			// Seems silly but it cycles infinitely anyway. (same for --main and --thumbs)
-			var slides = $(this).html();
-			while ($(this).children().length < 4) {
-				$(this).append(slides);
-			}
-			*/
 
 			options['asNavFor'] = '.gallery--linked__main';
 			// centerMode can be false but you're not able to slide backward
@@ -207,6 +191,13 @@ function initGalleries() {
 		}
 
 		$(this).slick(options);
+
+		// Fudge ths slick plugin to update the thumbs current slide, as the plugin itself is currently broken (known issue: https://github.com/kenwheeler/slick/issues/1563).
+		if ($(this).hasClass('gallery--linked__main')) {
+			$(this).on('beforeChange', function(e,slick,slide,nextSlide) {
+				$('.gallery--linked__thumbs').find('.slick-slide').removeClass('slick-current').eq(nextSlide).addClass('slick-current');
+			});
+		}
 
 		$(window).trigger('resize'); // to make sure heights are set properly
 	});
