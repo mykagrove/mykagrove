@@ -6,16 +6,16 @@ summary:    Just a cheeky test
 category:   electronics
 tags:       electronics rpi raspberrypi chiptunes
 gallery-images:
+ - file: test2_.jpg
+   alt: test
+ - file: test5.jpg
+   alt: test
  - file: test4.jpg
-   alt: test4
- - file: black.jpg
-   alt: black
- - file: red.jpg
-   alt: red
+   alt: test
  - file: test3.jpg
-   alt: Test3 alt text
+   alt: test
  - file: test.jpg
-   alt: Test alt text
+   alt: test
 ---
 
 
@@ -154,8 +154,6 @@ This allows your content to have the proper informational and contextual hierarc
 	3. Dance
 
 ### Images look great, too
-
-![desk](https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png)
 
 
 ### There are also pretty colors

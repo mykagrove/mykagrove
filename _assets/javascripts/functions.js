@@ -219,9 +219,9 @@ function colorGalleries() {
 	$('.gallery .slick-slide').length &&
 	$('.gallery .slick-slide').each(function() {
 		// Delve into the slide, grabbing the first image it comes across
-		if ($(this).find('img')) {
+		if ($(this).find('img').length) {
 			var image = $(this).find('img').first();
-			$(this).css('background-color', image.averageColor(10000).hex);
+			$(this).css('background-color', image.averageColor().hex);
 
 		}
 	});
