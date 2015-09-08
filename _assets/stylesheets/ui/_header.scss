@@ -1,16 +1,16 @@
-$motd--top: #4C8AFE;
-$motd--bottom: #9FD0FF;
-$nav__fa--top: #B58E02;
-$nav__fa--bottom: #DAC68D;
+$nav__fa--top: adjust-color(map-get($colors, quaternary), $lightness: 5%, $saturation: -35%) !default;
+$nav__fa--bottom: adjust-color(map-get($colors, quaternary), $lightness: 35%, $saturation: -40%) !default;
 
 .header {
 	position: relative;
 	padding: 5px 0;
 	overflow: visible;
-	//@include linear-gradient(map-get($colors, primary), black, top);
-	@include linear-gradient(adjust-color(map-get($colors, primary), $lightness: -15%, $saturation: -35%), black, top);
-	border-bottom: 2px solid $motd--bottom;
+	@include linear-gradient(map-get($colors, bg), black, top);
+
 	vertical-align: middle;
+
+	border-bottom: 2px solid $motd--bottom;
+	.nav--primary { @include xs { border-bottom: 2px solid $motd--bottom; } }
 
 	@include sm-plus {
 		padding: 10px 0;
@@ -108,14 +108,6 @@ $nav__fa--bottom: #DAC68D;
 			padding-right: 50px + 5px;
 			.social {
 				float: right;
-				/*-webkit-column-count: 2;
-				-moz-column-count: 2;
-				column-count: 2;
-				-webkit-column-gap: $grid-gutter-width;
-				-moz-column-gap: $grid-gutter-width;
-				column-gap: $grid-gutter-width;
-				-moz-column-fill: balance;
-				column-fill: balance;*/
 				li {
 					display: block;
 					float: left;
@@ -130,16 +122,6 @@ $nav__fa--bottom: #DAC68D;
 
 
 	.nav__button--header {
-		/*
-		background: black;
-		padding: 5px;
-		height: 50px;
-		vertical-align: middle;
-		@include fs(30);
-		border-radius: 2px;
-		&, .fa {
-		}
-		*/
 		position: absolute;
 		top: 0;
 		right: 0;

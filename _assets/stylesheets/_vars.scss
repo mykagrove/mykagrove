@@ -13,7 +13,7 @@ $colors: (
 	"primary": #327ee8,
 	"secondary": #002240,
 	"tertiary": black,
-	//"quaternary": #5555ff,
+	"quaternary": #F79400,
 	//"quinary": #09a5d8,
 	//"senary": #09a5d8,
 	//"septenary": #b3b3b3,
@@ -24,8 +24,13 @@ $colors: (
 	"black": black
 );
 
+// Add in our nice adjusted background color
+$colors: map-merge($colors, ("bg": adjust-color(map-get($colors, primary), $lightness: -15%, $saturation: -35%)));
+
+
 $link-hover-decoration: none; // default is underline, which is daft when <a> are none by default
 $brand-primary: map-get($colors, primary);
+$headings-color: map-get($colors, quaternary);
 
 // Generate .color--primary, .background--primary, etc style classes
 @each $key, $value in $colors {
@@ -46,3 +51,7 @@ $brand-primary: map-get($colors, primary);
 $z-indexes: (
 	"nav--primary": 100
 );
+
+
+$motd--top: #4C8AFE;
+$motd--bottom: #9FD0FF;

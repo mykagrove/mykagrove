@@ -3,9 +3,9 @@
  *  Get the average color of an image by looking at a limited sample of pixels.
  *	Returns an object containing r, g, b, and the hex value.
  *
- *	Copyright (c) 2016 Michael Cook
+ *	Copyright (c) 2015 Michael Cook
  *	Released under the MIT license:
- *  http://www.opensource.org/licenses/mit-license.php
+ * http://www.opensource.org/licenses/mit-license.php
  *
  */
 

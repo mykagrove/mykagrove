@@ -57,35 +57,6 @@ function beastyCode() {
 }
 
 
-/*
- * Let's throw a little bit of silliness into the mix
- */
-var cursorTimeout, cursorStates, cursorStatesIndex;
-function silliness() {
-	cursorStates = [
-		"n-resize",
-		"ne-resize",
-		"e-resize",
-		"se-resize",
-		"s-resize",
-		"sw-resize",
-		"w-resize",
-		"nw-resize"
-	];
-	cursorStatesIndex = 0;
-	$('.header__logo').hover(function() {
-		cursorTimeout = setInterval(function() {
-			$('.header__logo').css('cursor', cursorStates[cursorStatesIndex]);
-			//console.log(cursorStates[cursorStatesIndex]);
-			cursorStatesIndex++;
-			if (cursorStatesIndex >= cursorStates.length) cursorStatesIndex = 0;
-		}, 60);
-	}, function() {
-		$('.header__logo').css('cursor', 'auto');
-		clearInterval(cursorTimeout);
-	});
-}
-
 /* Update the year (in footer) just in case
  * Not using PHP, so {{ site.time | date: '%y' }} in markup only reflects last time it was compiled
  */

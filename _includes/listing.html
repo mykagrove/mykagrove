@@ -1,0 +1,17 @@
+
+<div class="listing listing--post">
+{% if post.gallery-images.first %}
+	<a href="{{ post.url }}" class="listing__image">
+		<img src="{{ post.gallery-images.first.file | append: ' [resize:200x100]' | asset_path }}" alt="{{ post.gallery-images.first.alt }}" />
+	</a>
+{% endif %}
+	<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+	<div class="listing__date">{{ post.date | date: "%-d %B %Y" }}</div>
+	<div class="listing__summary">
+		{% if post.summary %}
+			{{ post.summary }}
+		{% else %}
+			{{ post.excerpt }}
+		{% endif %}
+	</div>
+</div>

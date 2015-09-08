@@ -7,7 +7,7 @@
 {% for image in page.gallery-images %}
 <div>
 	<a href="{{ image.file | append: ' [resize:1230x690]' | asset_path }}">
-{{ image.file | append: ' [resize:1230x690]' | image }}
+		<img src="{{ image.file | append: ' [resize:1230x690]' | asset_path }}" alt="{{ image.alt }}" />
 	</a>
 </div>
 

@@ -1,8 +1,13 @@
 
-.content {
-	margin: 0 auto;
-	background: white;
-	min-height: 600px; // for good measure
+body {
+	background: map-get($colors, bg);
+}
+
+.footer {
+	position: relative;
+	@include linear-gradient(black, map-get($colors, bg), top);
+	border-top: 2px solid $motd--top;
+	color: $motd--top;
 
 	> .container-fluid {
 		padding-top: $grid-gutter-width*0.5;

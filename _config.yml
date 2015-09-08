@@ -9,6 +9,8 @@ timezone:    Europe/London
 exclude:     ["*.bat", "README_*", "NOTE_*", "node_modules", "gemfile", "Gemfile.lock", "bower_components", "*.sh"]
 #keep_files:  ["_assets/images"]
 
+# Stop publishing of future-dated posts
+future: false
 
 # Google analytics
 google_analytics:

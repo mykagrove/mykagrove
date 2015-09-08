@@ -2,3 +2,26 @@ html {
 	// Make sure we're allowing REM font sizes for @include fs()
 	font-size: 62.5%;
 }
+
+a {
+	@include animate(color, 0.1s, ease-in-out);
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3 {
+	a {
+		color: inherit;
+	}
+}
+
+h1,.h1,
+h2,.h2 {
+	color: map-get($colors, quaternary);
+	a:hover {
+		color: adjust-color(map-get($colors, quaternary), $lightness: -10%, $saturation: 10%);
+	}
+}
+h3,.h3 {
+	color: map-get($colors, primary);
+}
