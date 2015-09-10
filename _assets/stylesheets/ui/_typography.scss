@@ -10,8 +10,13 @@ a {
 h1,.h1,
 h2,.h2,
 h3,.h3 {
+	margin: 0;
+	padding-bottom: $grid-gutter-width;
 	a {
 		color: inherit;
+		// Simple lower opacity hover, copes well with the colorListings js.
+		opacity: 0.9;
+		@include attention { opacity: 1; }
 	}
 }
 
@@ -19,7 +24,7 @@ h1,.h1,
 h2,.h2 {
 	color: map-get($colors, quaternary);
 	a:hover {
-		color: adjust-color(map-get($colors, quaternary), $lightness: -10%, $saturation: 10%);
+		//color: adjust-color(map-get($colors, quaternary), $lightness: -10%, $saturation: 10%);
 	}
 }
 h3,.h3 {

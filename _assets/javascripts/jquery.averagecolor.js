@@ -1,7 +1,9 @@
 /*
- *	jQuery AverageColour v1.1
- *  Get the average color of an image by looking at a limited sample of pixels.
+ *	jQuery AverageColour v1.2
+ * Get the average color of an image by looking at a limited sample of pixels.
  *	Returns an object containing r, g, b, and the hex value.
+ *
+ * Handles <img> elements, or any element that has a background-image.
  *
  *	Copyright (c) 2015 Michael Cook
  *	Released under the MIT license:
@@ -9,20 +11,38 @@
  *
  */
 
+function rgbToHex(rgb) {
+	return "#" + ((1 << 24) + (rgb.r << 16) + (rgb.g << 8) + rgb.b).toString(16).slice(1);
+}
+
 (function($) {
 
 	$.fn.averageColor = function(options) {
 		var defaults = {
 			samples: 1000, // Look at a limited sample of pixels (change to affect quality/performance)
-			defaultColor: {r: 0, g: 0, b: 0} // defaults to black in case of failure
+			defaultColor: {r: 0, g: 0, b: 0, hex: "#000000"}, // defaults to black in case of failure
 		}
-
 
 		var options = $.extend(defaults, options);
 
+
 		// Create temporary image
 		var tempImage = new Image();
-		tempImage.src = $(this).attr('src');
+
+		// If it's a img element
+		if ($(this).attr('src') && $(this).attr('src').length) {
+			tempImage.src = $(this).attr('src');
+		}
+		// if it's a div with a background-image
+		else if ($(this).css('background-image').length) {
+			var backgroundImage = $(this).css('background-image');
+			if (backgroundImage.slice(0,4) === "url(") {
+				tempImage.src = backgroundImage.slice(4, backgroundImage.length-1);
+			}
+		}
+		else {
+			console.log("Averagecolor: couldn't understand the image provided")
+		}
 
 		var height = tempImage.height;
 		var width = tempImage.width;
@@ -86,11 +106,10 @@
 		delete canvas;
 		delete data;
 
+		// reveal the rgbToHex function for external use
+		//rgb.rgbToHex = rgbToHex;
+
 		return rgb; // return rgb no matter what
 	};
-
-    function rgbToHex(rgb) {
-	 	return "#" + ((1 << 24) + (rgb.r << 16) + (rgb.g << 8) + rgb.b).toString(16).slice(1);
-	}
 
 })(jQuery);

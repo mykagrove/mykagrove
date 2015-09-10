@@ -21,4 +21,6 @@ $(window).load(function() {
 	initGalleries();
 
 	colorGalleries();
+
+	colorListings();
 });

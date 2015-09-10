@@ -188,3 +188,33 @@ function colorGalleries() {
 		}
 	});
 }
+
+function colorListings() {
+	if (typeof $.fn.averageColor === 'undefined') { console.log("Functions: average-color must be loaded!"); return; }
+	$('.listing').length &&
+	$('.listing').each(function() {
+		// Delve into the slide, grabbing the first image it comes across
+		var listing = $(this);
+		if ($(this).find('.listing__image').length) {
+			var image = $(this).find('.listing__image');
+
+			if (image.css('background-image').length) {
+				var average = image.averageColor();
+
+				// Additional code to handle lighter average colours (r*g*b..)
+				if (average.r + average.g + average.b > 500) {
+					average.r = Math.floor(average.r/2);
+					average.g = Math.floor(average.r/2);
+					average.b = Math.floor(average.r/2);
+					average.hex = rgbToHex(average);
+				}
+
+				listing.css('border-color', average.hex);
+				if (listing.find('h1,h2').length) {
+					listing.find('h1,h2').css('color', average.hex);
+				}
+			}
+		}
+		if (listing.find('h1,h2').length) { listing.find('h1,h2').show(); } // hidden by css
+	});
+}

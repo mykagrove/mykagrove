@@ -1,0 +1,53 @@
+
+.listing {
+	position: relative;
+	border-top: 2px solid map-get($colors, primary);
+	padding-top: $grid-gutter-width;
+	padding-bottom: $grid-gutter-width;
+
+	// Hide headers initially, colored and shown by js.
+	h1,h2 { display: none; }
+
+	&__image {
+		display: block;
+		background-position: center;
+		background-size: cover;
+	}
+	@include xs {
+		&__image {
+			width: 100%;
+			height: 180px * 1.5;
+			margin-bottom: $grid-gutter-width;
+		}
+	}
+	@include sm-plus {
+		&__image {
+			position: absolute;
+			left: 0;
+			top: $grid-gutter-width;
+		}
+	}
+	// This could be rewritten to use grid columns and only set heights,
+	// Which would be more fluid but less predictable. Much of a muchness.
+	@mixin listing__image--sizing($scale) {
+		padding-left: 320px * $scale + $grid-gutter-width;
+		min-height: 180px * $scale + $grid-gutter-width * 2;
+		&__image {
+			width: 320px * $scale;
+			height: 180px * $scale;
+
+			@include animate(all, 0.15s, ease);
+
+			@include attention {
+				// bit overwraught, by why the heck not
+				width: 320px * $scale + $grid-gutter-width;
+				height: 180px * $scale + $grid-gutter-width;
+				top: $grid-gutter-width - $grid-gutter-width * 0.5;
+				left: - $grid-gutter-width * 0.5;
+			}
+		}
+	}
+	@include sm { @include listing__image--sizing(0.6); }
+	@include md { @include listing__image--sizing(0.8); }
+	@include lg { @include listing__image--sizing(1); }
+}

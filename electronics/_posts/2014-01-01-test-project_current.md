@@ -16,6 +16,8 @@ gallery-images:
    alt: test
  - file: test.jpg
    alt: test
+ - file: test6.jpg
+   alt: test
 ---
 
 
