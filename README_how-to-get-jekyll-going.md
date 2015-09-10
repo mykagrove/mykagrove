@@ -1,9 +1,9 @@
 
 # Setting up this site initially
 git clone https://github.com/mykagrove/mykagrove.github.io.git
+cd mykagrove.github.io
 git checkout source
 # check it out again within, rename to _site and switch it to master branch::
-cd mykagrove.github.io
 git clone https://github.com/mykagrove/mykagrove.github.io.git
 move mykagrove.github.io _site
 cd _site
