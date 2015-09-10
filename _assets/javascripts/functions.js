@@ -163,10 +163,11 @@ function initGalleries() {
 
 		$(this).slick(options);
 
-		// Fudge ths slick plugin to update the thumbs current slide, as the plugin itself is currently broken (known issue: https://github.com/kenwheeler/slick/issues/1563).
+		// Fudge the slick plugin to update the thumbs current slide, as the plugin itself is currently broken (known issue: https://github.com/kenwheeler/slick/issues/1563).
 		if ($(this).hasClass('gallery--linked__main')) {
 			$(this).on('beforeChange', function(e,slick,slide,nextSlide) {
-				$('.gallery--linked__thumbs').find('.slick-slide').removeClass('slick-current').eq(nextSlide).addClass('slick-current');
+				console.log(nextSlide)
+				$('.gallery--linked__thumbs').find('.slick-slide').removeClass('slick-current').not('.slick-cloned').eq(nextSlide).addClass('slick-current');
 			});
 		}
 
