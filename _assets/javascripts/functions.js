@@ -202,7 +202,7 @@ function colorListings() {
 				var average = image.averageColor();
 
 				// Additional code to handle lighter average colours (r*g*b..)
-				if (average.r + average.g + average.b > 500) {
+				if (average.r + average.g + average.b > 600) {
 					average.r = Math.floor(average.r/2);
 					average.g = Math.floor(average.r/2);
 					average.b = Math.floor(average.r/2);

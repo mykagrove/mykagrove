@@ -46,7 +46,7 @@
 	@mixin listing__image--sizing($scale) {
 		padding-left: 320px * $scale + $grid-gutter-width;
 		min-height: 180px * $scale + $grid-gutter-width * 2;
-		&__image {
+		.listing__image {
 			width: 320px * $scale;
 			height: 180px * $scale;
 
@@ -61,7 +61,9 @@
 			}
 		}
 	}
-	@include sm { @include listing__image--sizing(0.6); }
-	@include md { @include listing__image--sizing(0.8); }
-	@include lg { @include listing__image--sizing(1); }
+	&--has-image {
+		@include sm { @include listing__image--sizing(0.6); }
+		@include md { @include listing__image--sizing(0.8); }
+		@include lg { @include listing__image--sizing(1); }
+	}
 }

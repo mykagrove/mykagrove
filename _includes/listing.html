@@ -1,5 +1,5 @@
 
-<div class="listing listing--post">
+<div class="listing listing--post{% if post.gallery-images.first %} listing--has-image{% endif %}">
 {% if post.gallery-images.first %}
 	<a href="{{ post.url }}" class="listing__image">
 		<div class="listing__image__inner" style="background-image:url({{ post.gallery-images.first.file | append: ' [resize:320x180]' | asset_path }})"></div>
