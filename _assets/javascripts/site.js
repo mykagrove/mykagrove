@@ -1,3 +1,4 @@
+//= require respond
 //= require functions
 //= require slick
 //= require jquery.averagecolor
