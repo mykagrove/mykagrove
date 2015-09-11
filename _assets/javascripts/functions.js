@@ -166,7 +166,6 @@ function initGalleries() {
 		// Fudge the slick plugin to update the thumbs current slide, as the plugin itself is currently broken (known issue: https://github.com/kenwheeler/slick/issues/1563).
 		if ($(this).hasClass('gallery--linked__main')) {
 			$(this).on('beforeChange', function(e,slick,slide,nextSlide) {
-				console.log(nextSlide)
 				$('.gallery--linked__thumbs').find('.slick-slide').removeClass('slick-current').not('.slick-cloned').eq(nextSlide).addClass('slick-current');
 			});
 		}
