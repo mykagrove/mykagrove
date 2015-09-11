@@ -195,8 +195,8 @@ function colorListings() {
 	$('.listing').each(function() {
 		// Delve into the slide, grabbing the first image it comes across
 		var listing = $(this);
-		if ($(this).find('.listing__image').length) {
-			var image = $(this).find('.listing__image');
+		if ($(this).find('.listing__image__inner').length) {
+			var image = $(this).find('.listing__image__inner');
 
 			if (image.css('background-image').length) {
 				var average = image.averageColor();
@@ -216,5 +216,30 @@ function colorListings() {
 			}
 		}
 		if (listing.find('h1,h2').length) { listing.find('h1,h2').show(); } // hidden by css
+	});
+}
+
+function hoverListings() {
+	$('.listing__image__inner').length &&
+	$('.listing__image').mousemove(function(e) {
+		var offset = $(this).offset(),
+			x = e.pageX - offset.left,
+			y = e.pageY - offset.top,
+			width = $(this).width();
+			height = $(this).height();
+			fractionX = x/width - 0.5, // -0.5 -> 0.5 ish
+			fractionY = y/height - 0.5,
+			scale = 30; // how rotated it can become
+		if (fractionX<-0.5) fractionX = -0.5;
+		if (fractionY<-0.5) fractionY = -0.5;
+		// fraction values are roughly 0 when cursor is in center
+		//console.log(fractionX +', '+ fractionY);
+		fractionX *= scale;
+		fractionY *= scale;
+
+		var inner = $(this).find('.listing__image__inner');
+		inner.css("-webkit-transform", "perspective(800) rotateX("+-fractionY+"deg) rotateY("+fractionX+"deg)");
+		inner.css("box-shadow", "inset "+fractionX+"px "+fractionY+"px 30px 1px rgba(255,255,255,0.5),
+										 inset "+-fractionX+"px "+-fractionY+"px 30px 1px rgba(0,0,0,0.5)");
 	});
 }

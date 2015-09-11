@@ -1,5 +1,5 @@
 /*
- *	jQuery AverageColour v1.2
+ *	jQuery AverageColour v1.3
  * Get the average color of an image by looking at a limited sample of pixels.
  *	Returns an object containing r, g, b, and the hex value.
  *

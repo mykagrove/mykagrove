@@ -23,4 +23,6 @@ $(window).load(function() {
 	colorGalleries();
 
 	colorListings();
+
+	hoverListings();
 });
