@@ -175,7 +175,9 @@ function initGalleries() {
 }
 
 
-
+/* Color the backgrounds for each gallery slide
+ * to match the average colour of the image it contains.
+ */
 function colorGalleries() {
 	if (typeof $.fn.averageColor === 'undefined') { console.log("Functions: average-color must be loaded!"); return; }
 	$('.gallery .slick-slide').length &&
@@ -184,11 +186,13 @@ function colorGalleries() {
 		if ($(this).find('img').length) {
 			var image = $(this).find('img').first();
 			$(this).css('background-color', image.averageColor().hex);
-
 		}
 	});
 }
 
+/* Color the headers in listings to match
+ * the average colour of its image.
+ */
 function colorListings() {
 	if (typeof $.fn.averageColor === 'undefined') { console.log("Functions: average-color must be loaded!"); return; }
 	$('.listing').length &&
@@ -219,6 +223,9 @@ function colorListings() {
 	});
 }
 
+/* When hovering over a listing image, for the fun of it,
+ * style the image such that it appears to face the cursor.
+ */
 function hoverListings() {
 	$('.listing__image__inner').length &&
 	$('.listing__image').mousemove(function(e) {
@@ -234,12 +241,10 @@ function hoverListings() {
 		if (fractionY<-0.5) fractionY = -0.5;
 		// fraction values are roughly 0 when cursor is in center
 		//console.log(fractionX +', '+ fractionY);
-		fractionX *= scale;
-		fractionY *= scale;
 
 		var inner = $(this).find('.listing__image__inner');
-		inner.css("-webkit-transform", "perspective(800) rotateX("+-fractionY+"deg) rotateY("+fractionX+"deg)");
-		inner.css("box-shadow", "inset "+fractionX+"px "+fractionY+"px 30px 1px rgba(255,255,255,0.5),
-										 inset "+-fractionX+"px "+-fractionY+"px 30px 1px rgba(0,0,0,0.5)");
+		inner.css("-webkit-transform", "perspective(800) rotateX("+-fractionY*scale+"deg) rotateY("+fractionX*scale+"deg)");
+		inner.css("box-shadow", "inset "+fractionX*scale+"px "+fractionY*scale+"px 30px 1px rgba(255,255,255,0.5),
+										 inset "+-fractionX*scale+"px "+-fractionY*scale+"px 30px 1px rgba(0,0,0,0.5)");
 	});
 }

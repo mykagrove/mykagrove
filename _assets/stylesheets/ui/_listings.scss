@@ -16,6 +16,10 @@
 			top: 0; right: 0; bottom: 0; left: 0;
 			background-position: center;
 			background-size: cover;
+
+			// default version of that in hoverlistings()
+			box-shadow: inset 0px 0px 30px 1px rgba(255,255,255,0.5),
+							inset 0px 0px 30px 1px rgba(0,0,0,0.5);
 		}
 	}
 	@include xs {
@@ -54,10 +58,12 @@
 
 			@include attention {
 				// bit overwraught, by why the heck not
+				/*
 				width: 320px * $scale + $grid-gutter-width;
 				height: 180px * $scale + $grid-gutter-width;
 				top: $grid-gutter-width - $grid-gutter-width * 0.5;
 				left: - $grid-gutter-width * 0.5;
+				*/
 			}
 		}
 	}
