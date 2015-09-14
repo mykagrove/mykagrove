@@ -5,8 +5,20 @@
 	padding-top: $grid-gutter-width;
 	padding-bottom: $grid-gutter-width;
 
-	// Hide headers initially, colored and shown by js.
+	// Hide certain headers initially, colored and shown by js.
 	h1,h2 { display: none; }
+
+	h2 {
+		padding-bottom: 0;
+	}
+	h3 {
+		@include fs(18);
+		padding-bottom: 0;
+	}
+	&__date {
+		@include sm-plus { padding-top: 10px; }
+		padding-bottom: $grid-gutter-width * 0.5;
+	}
 
 	&__image {
 		display: block;

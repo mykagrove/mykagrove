@@ -42,6 +42,7 @@ share_stumbleupon: false
 share_hackernews: false
 
 # Build settings
+excerpt_separator: <!--more-->
 markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']

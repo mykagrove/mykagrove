@@ -21,12 +21,10 @@ h3,.h3 {
 }
 
 h1,.h1,
-h2,.h2 {
+h2,.h2,
+h3,.h3 {
 	color: map-get($colors, quaternary);
 	a:hover {
 		//color: adjust-color(map-get($colors, quaternary), $lightness: -10%, $saturation: 10%);
 	}
-}
-h3,.h3 {
-	color: map-get($colors, primary);
 }
