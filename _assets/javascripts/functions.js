@@ -253,24 +253,6 @@ function hoverListings() {
 	.mouseleave(function(e) {
 		var inner = $(this).find('.listing__image__inner');
 		inner.addClass('reset');
-		//var inner = $(this).find('.listing__image__inner');
-		//applyTransform($(this).find('.listing__image__inner'),"");
-		//$(this).find('.listing__image__inner').removeAttr('style');
-		//console.log('animating')
-		/*
-		inner.find('.listing__image__inner').animate({
-			'-webkit-transform': 'none',
-			'-moz-transform':    'none',
-			'-ms-transform':     'none',
-			'-o-transform':      'none',
-			'transform':         'none',
-			'border': '10px solid red'
-		}, 1000, function() {
-			console.log('animated')
-
-		})
-*/
-		//$(this).switchClass('reset', 1000);
 	});
 }
 

@@ -10,8 +10,8 @@ body {
 	color: $motd--top;
 
 	> .container-fluid {
-		padding-top: $grid-gutter-width*0.5;
-		padding-bottom: $grid-gutter-width*0.5;
+		padding-top: $grid-gutter-width*0.75;
+		padding-bottom: $grid-gutter-width*0.75;
 		@include md-plus {
 			padding-top: $grid-gutter-width;
 			padding-bottom: $grid-gutter-width;
