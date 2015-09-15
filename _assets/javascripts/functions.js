@@ -243,8 +243,23 @@ function hoverListings() {
 		//console.log(fractionX +', '+ fractionY);
 
 		var inner = $(this).find('.listing__image__inner');
-		inner.css("-webkit-transform", "perspective(800) rotateX("+-fractionY*scale+"deg) rotateY("+fractionX*scale+"deg)");
+
+		applyTransform(inner,"rotateX("+-Math.floor(fractionY*scale)+"deg) rotateY("+Math.floor(fractionX*scale)+"deg)");
+
 		inner.css("box-shadow", "inset "+fractionX*scale+"px "+fractionY*scale+"px 30px 1px rgba(255,255,255,0.5),
-										 inset "+-fractionX*scale+"px "+-fractionY*scale+"px 30px 1px rgba(0,0,0,0.5)");
+										 inset "+-fractionX*scale+"px "+-fractionY*scale+"px 30px 1px rgba(0,0,0,0.75)");
+	});
+}
+
+/* Apply transform css property with all the vendor prefixes
+ */
+function applyTransform(element, transform) {
+	console.log(transform)
+	element.css({
+		'-webkit-transform': transform,
+		'-moz-transform':    transform,
+		'-ms-transform':     transform,
+		'-o-transform':      transform,
+		'transform':         transform
 	});
 }

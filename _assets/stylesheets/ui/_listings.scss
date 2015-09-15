@@ -31,7 +31,7 @@
 
 			// default version of that in hoverlistings()
 			box-shadow: inset 0px 0px 30px 1px rgba(255,255,255,0.5),
-							inset 0px 0px 30px 1px rgba(0,0,0,0.5);
+							inset 0px 0px 30px 1px rgba(0,0,0,0.75);
 		}
 	}
 	@include xs {
@@ -51,9 +51,17 @@
 			left: 0;
 			top: $grid-gutter-width;
 
+			// must be on parent
+			-webkit-perspective: 800px;
+			-moz-perspective:    800px;
+			-ms-perspective:     800px;
+			-o-perspective:      800px;
+			perspective:         800px;
+
 			&__inner {
 				-webkit-transform-style: preserve-3d;
 				//-webkit-transform: perspective(1000) rotateX(50deg) rotateY(20deg);
+				outline: 1px solid transparent; // firefox anti-aliasing
 			}
 		}
 	}
