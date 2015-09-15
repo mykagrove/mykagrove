@@ -33,13 +33,19 @@
 	h2 {
 		padding-bottom: 0;
 	}
-	h3 {
-		@include fs(18);
-		padding-bottom: 0;
+	&__summary {
+		@include fs(16);
+		padding: 0;
+		@include sm-plus {
+			padding-bottom: $grid-gutter-width * 0.5;
+		}
 	}
 	&__date {
-		@include sm-plus { padding-top: 10px; }
 		padding-bottom: $grid-gutter-width * 0.5;
+		@include sm-plus {
+			padding-top: 10px;
+			padding-bottom: 0;
+		}
 	}
 
 	&__image {
@@ -123,5 +129,11 @@
 		@include sm { @include listing__image--sizing(0.6); }
 		@include md { @include listing__image--sizing(0.8); }
 		@include lg { @include listing__image--sizing(1); }
+	}
+
+	&__readmore {
+		text-decoration: underline;
+		color: map-get($colors, quaternary);
+		.fa { margin-left: 5px; }
 	}
 }

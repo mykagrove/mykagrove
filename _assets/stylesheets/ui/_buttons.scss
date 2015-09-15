@@ -1,0 +1,16 @@
+
+.btn {
+	color: white;
+	background: map-get($colors, primary);
+	border-radius: 5px;
+	font-weight: bold;
+	margin-bottom: $grid-gutter-width * 0.5;
+	border: none;
+	@include animate(all, 0.1s, ease-in-out);
+
+
+	@include attention {
+		color: white;
+		background-color: adjust-color(map-get($colors, primary), $lightness: 5%, $saturation: -10%);
+	}
+}

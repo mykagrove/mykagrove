@@ -10,8 +10,9 @@ layout: default
 					{% include listing.html %}
 				{% endfor %}
 			</div>
-
-			{% include pagination.html %}
+			{% comment %}
+				Categories can't have pagination by default, there is apparently a plugin but let's just not bother for now.
+			{% endcomment %}
 		</div>
 	</div>
 </div>

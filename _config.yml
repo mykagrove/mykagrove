@@ -42,12 +42,12 @@ share_stumbleupon: false
 share_hackernews: false
 
 # Build settings
-excerpt_separator: <!--more-->
+excerpt_separator: <!--readmore-->
 markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     4
+paginate:     6
 sass:
 #  style: compressed
   style: nested

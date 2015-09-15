@@ -21,7 +21,7 @@ gallery-images:
 ---
 
 Test
-<!--more-->
+<!--readmore-->
 
 ~~~
 function sassWatch(data) {
