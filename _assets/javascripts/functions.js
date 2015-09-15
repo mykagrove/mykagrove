@@ -243,18 +243,41 @@ function hoverListings() {
 		//console.log(fractionX +', '+ fractionY);
 
 		var inner = $(this).find('.listing__image__inner');
+		inner.removeClass('reset');
 
 		applyTransform(inner,"rotateX("+-Math.floor(fractionY*scale)+"deg) rotateY("+Math.floor(fractionX*scale)+"deg)");
 
 		inner.css("box-shadow", "inset "+fractionX*scale+"px "+fractionY*scale+"px 30px 1px rgba(255,255,255,0.5),
-										 inset "+-fractionX*scale+"px "+-fractionY*scale+"px 30px 1px rgba(0,0,0,0.75)");
+										 inset "+-fractionX*scale+"px "+-fractionY*scale+"px 30px 1px rgba(0,0,0,0.65)");
+	})
+	.mouseleave(function(e) {
+		var inner = $(this).find('.listing__image__inner');
+		inner.addClass('reset');
+		//var inner = $(this).find('.listing__image__inner');
+		//applyTransform($(this).find('.listing__image__inner'),"");
+		//$(this).find('.listing__image__inner').removeAttr('style');
+		//console.log('animating')
+		/*
+		inner.find('.listing__image__inner').animate({
+			'-webkit-transform': 'none',
+			'-moz-transform':    'none',
+			'-ms-transform':     'none',
+			'-o-transform':      'none',
+			'transform':         'none',
+			'border': '10px solid red'
+		}, 1000, function() {
+			console.log('animated')
+
+		})
+*/
+		//$(this).switchClass('reset', 1000);
 	});
 }
 
 /* Apply transform css property with all the vendor prefixes
  */
 function applyTransform(element, transform) {
-	console.log(transform)
+	//console.log(transform)
 	element.css({
 		'-webkit-transform': transform,
 		'-moz-transform':    transform,

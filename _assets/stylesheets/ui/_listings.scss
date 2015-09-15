@@ -1,4 +1,19 @@
 
+@mixin listing__image__inner--reset--shadow {
+	// default version of that in hoverlistings()
+	box-shadow: inset 0px 0px 30px 1px rgba(255,255,255,0.5),
+				inset 0px 0px 30px 1px rgba(0,0,0,0.65);
+}
+@mixin listing__image__inner--reset--transform {
+	-webkit-transform: none!important;
+	-moz-transform:    none!important;
+	-ms-transform:     none!important;
+	-o-transform:      none!important;
+	transform:         none!important;
+}
+.listing__image__inner--reset--shadow { @include listing__image__inner--reset--shadow; }
+.listing__image__inner--reset--transform { @include listing__image__inner--reset--transform; }
+
 .listing {
 	position: relative;
 	border-top: 2px solid map-get($colors, primary);
@@ -28,10 +43,7 @@
 			top: 0; right: 0; bottom: 0; left: 0;
 			background-position: center;
 			background-size: cover;
-
-			// default version of that in hoverlistings()
-			box-shadow: inset 0px 0px 30px 1px rgba(255,255,255,0.5),
-							inset 0px 0px 30px 1px rgba(0,0,0,0.75);
+			@extend .listing__image__inner--reset--shadow;
 		}
 	}
 	@include xs {
@@ -40,7 +52,9 @@
 			height: 180px * 1.5;
 			margin-bottom: $grid-gutter-width;
 			&__inner {
-				-webkit-transform: none!important;
+				@include listing__image__inner--reset--transform;
+				@include listing__image__inner--reset--shadow;
+
 				box-shadow: none!important;
 			}
 		}
@@ -62,6 +76,13 @@
 				-webkit-transform-style: preserve-3d;
 				//-webkit-transform: perspective(1000) rotateX(50deg) rotateY(20deg);
 				outline: 1px solid transparent; // firefox anti-aliasing
+
+
+				&.reset {
+					@include animate(all, 1s, ease-in-out);
+					@include listing__image__inner--reset--transform;
+					@include listing__image__inner--reset--shadow;
+				}
 			}
 		}
 	}
@@ -73,8 +94,6 @@
 		.listing__image {
 			width: 320px * $scale;
 			height: 180px * $scale;
-
-			@include animate(all, 0.15s, ease);
 
 			@include attention {
 				// bit overwraught, by why the heck not
