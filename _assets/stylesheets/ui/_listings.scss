@@ -1,8 +1,14 @@
 
-@mixin listing__image__inner--reset--shadow {
+// Must admit, these mixin names are getting a bit like, wonder if I can namespace them..?
+@mixin listing__image__inner--reset--shadow--soft {
 	// default version of that in hoverlistings()
 	box-shadow: inset 0px 0px 30px 1px rgba(255,255,255,0.5),
 				inset 0px 0px 30px 1px rgba(0,0,0,0.65);
+}
+@mixin listing__image__inner--reset--shadow--hard {
+	// default version of that in hoverlistings()
+	box-shadow: inset 0px 0px 30px 1px rgba(255,255,255,0.5),
+				inset 0px 0px 30px 1px rgba(0,0,0,0.65)!important;
 }
 @mixin listing__image__inner--reset--transform {
 	-webkit-transform: none!important;
@@ -11,7 +17,8 @@
 	-o-transform:      none!important;
 	transform:         none!important;
 }
-.listing__image__inner--reset--shadow { @include listing__image__inner--reset--shadow; }
+.listing__image__inner--reset--shadow--soft { @include listing__image__inner--reset--shadow--soft; }
+.listing__image__inner--reset--shadow--hard { @include listing__image__inner--reset--shadow--hard; }
 .listing__image__inner--reset--transform { @include listing__image__inner--reset--transform; }
 
 .listing {
@@ -43,7 +50,7 @@
 			top: 0; right: 0; bottom: 0; left: 0;
 			background-position: center;
 			background-size: cover;
-			@extend .listing__image__inner--reset--shadow;
+			@extend .listing__image__inner--reset--shadow--soft;
 		}
 	}
 	@include xs {
@@ -53,7 +60,7 @@
 			margin-bottom: $grid-gutter-width;
 			&__inner {
 				@include listing__image__inner--reset--transform;
-				@include listing__image__inner--reset--shadow;
+				@include listing__image__inner--reset--shadow--hard;
 
 				box-shadow: none!important;
 			}
@@ -81,7 +88,7 @@
 				&.reset {
 					@include animate(all, 1s, ease-in-out);
 					@include listing__image__inner--reset--transform;
-					@include listing__image__inner--reset--shadow;
+					@include listing__image__inner--reset--shadow--hard;
 				}
 			}
 		}
