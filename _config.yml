@@ -47,7 +47,7 @@ markdown:     kramdown
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     6
+paginate:     4
 sass:
 #  style: compressed
   style: nested

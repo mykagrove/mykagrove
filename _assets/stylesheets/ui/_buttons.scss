@@ -4,10 +4,11 @@
 	background: map-get($colors, primary);
 	border-radius: 5px;
 	font-weight: bold;
+	@include fs(18);
+	padding: 5px 20px;
 	margin-bottom: $grid-gutter-width * 0.5;
 	border: none;
 	@include animate(all, 0.1s, ease-in-out);
-
 
 	@include attention {
 		color: white;
