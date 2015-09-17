@@ -17,8 +17,7 @@ html {
 	overflow: auto;
 }
 .container-fluid {
-	max-width: $grid-column-max-width * $grid-columns + $grid-gutter-width * ($grid-columns + 1);
-	//max-width: $grid-column-max-width * $grid-columns + $grid-gutter-width * ($grid-columns - 1);
+	max-width: $container-max-width;
 
 	// Give containers a natural amount of padding
 	padding-left: $grid-gutter-width*0.5;

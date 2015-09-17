@@ -185,7 +185,16 @@ function colorGalleries() {
 		// Delve into the slide, grabbing the first image it comes across
 		if ($(this).find('img').length) {
 			var image = $(this).find('img').first();
-			$(this).css('background-color', image.averageColor().hex);
+			image.averageColor({
+				colorParent: true,
+				fadeEdges: {
+					enabled: true,
+					edges: [
+						'right',
+						'left'
+					]
+				}
+			});
 		}
 	});
 }

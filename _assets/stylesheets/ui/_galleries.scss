@@ -135,8 +135,22 @@
 	// galleries in general - full width centered images
 	.slick-slide {
 		> a { display: block; }
-		img {
-			@extend .full--center;
+		> * {
+			text-align: center;
+			> * { // img, or div if averagecolor fadeEdges
+				//@extend .full--center;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: $container-max-width;
+				img {
+					//@extend .fill;
+				}
+			}
+		}
+
+		.averagecolor__fade {
+			@extend .hidden-xs;
+			@extend .hidden-sm;
 		}
 	}
 

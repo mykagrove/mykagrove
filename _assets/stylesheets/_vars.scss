@@ -5,6 +5,7 @@
 $grid-columns:          12;
 $grid-gutter-width:     20px;
 $grid-column-max-width: 70px;
+$container-max-width:   $grid-column-max-width * $grid-columns + $grid-gutter-width * ($grid-columns + 1);
 
 $disableAdaptiveLayout: true; // stop auto-changing fixed widths for different sizes
 
