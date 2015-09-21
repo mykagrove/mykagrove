@@ -1,5 +1,5 @@
 /*
- *	jQuery AverageColour v1.5
+ *	jQuery AverageColour v1.6
  * Get the average color of an image by looking at a limited sample of pixels.
  *	Returns an object containing r, g, b, and the hex value.
  * It can also colour the background of a parent element and fade the edges of the image
@@ -38,12 +38,12 @@ function rgbToHex(rgb) {
 		}
 
 		// Allow given fadeEdges values to override defaults intuitively despite being in an object
-      if (options.fadeEdges) {
-      	for (var key in options.fadeEdges) {
-      		defaults.fadeEdges[key] = options.fadeEdges[key];
-      	}
-      }
-      options = $.extend(true, {}, defaults, options);
+		if (typeof options !== 'undefined' && options.length && options.fadeEdges.length) {
+			for (var key in options.fadeEdges) {
+				defaults.fadeEdges[key] = options.fadeEdges[key];
+			}
+		}
+		options = $.extend(true, {}, defaults, options);
 
 		// Create temporary image
 		var tempImage = new Image();
