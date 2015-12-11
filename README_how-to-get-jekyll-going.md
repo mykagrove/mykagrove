@@ -29,6 +29,8 @@ bundle install
 # ^ in the VM if using one!! See troubleshooting if problems (likely)
 # NOTE: if you've installed once, it locks versions so you have to use:
 bundle update
+bundler update
+# ^ in linux
 
 # (need to reboot linux at this point)
 

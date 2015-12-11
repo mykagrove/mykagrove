@@ -10,26 +10,20 @@ $container-max-width:   $grid-column-max-width * $grid-columns + $grid-gutter-wi
 $disableAdaptiveLayout: true; // stop auto-changing fixed widths for different sizes
 
 $colors: (
-	"primary":     #327ee8,
-	"secondary":   #002240,
-	"tertiary":    black,
-	"quaternary":  #F79400,
-	//"quinary":   #09a5d8,
-	//"senary":    #09a5d8,
-	//"septenary": #b3b3b3,
-	//"octonary":  #c3d600,
-	//"nonary":    #f78d0f,
-	//"warning":   #fc4237,
-	"white":       white,
-	"black":       black
+	"1":     #327ee8,
+	"2":     #002240,
+	"3":     black,
+	"4":     #F79400,
+	"white": white,
+	"black": black
 );
 
 // Add in our nice adjusted background color
-$colors: map-merge($colors, ("bg": adjust-color(map-get($colors, primary), $lightness: -15%, $saturation: -35%)));
+$colors: map-merge($colors, ("bg": adjust-color(map-get($colors,'1'), $lightness: -15%, $saturation: -35%)));
 
 $link-hover-decoration: none; // default is underline, which is daft when <a> are none by default
-$brand-primary: map-get($colors, primary);
-$headings-color: map-get($colors, quaternary);
+$brand-primary: map-get($colors,'1');
+$headings-color: map-get($colors,'4');
 
 // Generate .color--primary, .background--primary, etc style classes
 @each $key, $value in $colors {

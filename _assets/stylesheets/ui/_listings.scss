@@ -23,7 +23,7 @@
 
 .listing {
 	position: relative;
-	border-top: 2px solid map-get($colors, primary);
+	border-top: 2px solid map-get($colors,'1');
 	padding-top: $grid-gutter-width;
 	padding-bottom: $grid-gutter-width;
 
@@ -133,7 +133,7 @@
 
 	&__readmore {
 		text-decoration: underline;
-		color: map-get($colors, quaternary);
+		color: map-get($colors,'4');
 		.fa { margin-left: 5px; }
 	}
 }

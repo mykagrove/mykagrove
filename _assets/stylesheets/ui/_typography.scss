@@ -23,8 +23,8 @@ h3,.h3 {
 h1,.h1,
 h2,.h2,
 h3,.h3 {
-	color: map-get($colors, quaternary);
+	color: map-get($colors,'4');
 	a:hover {
-		//color: adjust-color(map-get($colors, quaternary), $lightness: -10%, $saturation: 10%);
+		//color: adjust-color(map-get($colors,'4'), $lightness: -10%, $saturation: 10%);
 	}
 }

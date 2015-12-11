@@ -1,5 +1,5 @@
-$nav__fa--top: adjust-color(map-get($colors, quaternary), $lightness: 5%, $saturation: -35%) !default;
-$nav__fa--bottom: adjust-color(map-get($colors, quaternary), $lightness: 35%, $saturation: -40%) !default;
+$nav__fa--top: adjust-color(map-get($colors,'4'), $lightness: 5%, $saturation: -35%) !default;
+$nav__fa--bottom: adjust-color(map-get($colors,'4'), $lightness: 35%, $saturation: -40%) !default;
 
 .header {
 	position: relative;
@@ -33,10 +33,10 @@ $nav__fa--bottom: adjust-color(map-get($colors, quaternary), $lightness: 35%, $s
 	&__social a {
 		/*
 		//&, &--active:hover {
-		color: adjust-color(map-get($colors, primary), $lightness: 30%, $saturation: 10%);
+		color: adjust-color(map-get($colors,'1'), $lightness: 30%, $saturation: 10%);
 		//&:not(&--active) &:hover {
 		&:hover {
-			color: adjust-color(map-get($colors, primary), $lightness: 40%, $saturation: 0%);
+			color: adjust-color(map-get($colors,'1'), $lightness: 40%, $saturation: 0%);
 		}
 		*/
 
@@ -137,7 +137,7 @@ $nav__fa--bottom: adjust-color(map-get($colors, quaternary), $lightness: 35%, $s
 			text-align: center;
 			top: 50%; left: 0; right: 0;
 			margin-top: -30px*0.5;
-			color: adjust-color(map-get($colors, primary), $lightness: 30%, $saturation: 10%);
+			color: adjust-color(map-get($colors,'1'), $lightness: 30%, $saturation: 10%);
 			@include fs(30);
 		}
 	}

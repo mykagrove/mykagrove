@@ -3,8 +3,6 @@ GEM
   specs:
     addressable (2.3.8)
     blankslate (2.1.2.4)
-    celluloid (0.16.0)
-      timers (~> 4.0.0)
     classifier-reborn (2.0.3)
       fast-stemmer (~> 1.0)
     coffee-script (2.4.1)
@@ -21,8 +19,8 @@ GEM
     fastimage (1.7.0)
       addressable (~> 2.3, >= 2.3.5)
     ffi (1.9.10)
+    ffi (1.9.10-x64-mingw32)
     hike (1.2.3)
-    hitimes (1.2.2)
     html_press (0.8.2)
       htmlentities
       multi_css (>= 0.1.0)
@@ -53,7 +51,7 @@ GEM
       sprockets-sass
     jekyll-coffeescript (1.0.1)
       coffee-script (~> 2.2)
-    jekyll-gist (1.3.2)
+    jekyll-gist (1.3.4)
     jekyll-paginate (1.1.0)
     jekyll-press (0.2.1)
       html_press (>= 0.8.2)
@@ -62,23 +60,26 @@ GEM
       multi_js (>= 0.1.0)
     jekyll-sass-converter (1.3.0)
       sass (~> 3.2)
-    jekyll-sitemap (0.8.1)
-    jekyll-watch (1.2.1)
-      listen (~> 2.7)
+    jekyll-sitemap (0.9.0)
+    jekyll-watch (1.3.0)
+      listen (~> 3.0)
     json (1.8.3)
     kramdown (1.8.0)
     liquid (2.6.3)
-    listen (2.10.1)
-      celluloid (~> 0.16.0)
+    listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
-    mini_magick (4.2.10)
+    mini_magick (4.3.3)
     multi_css (0.1.0)
       css_press
     multi_js (0.1.0)
       uglifier (~> 2)
     multi_json (1.11.2)
+    octopress-hooks (2.6.1)
+      jekyll (>= 2.0)
+    octopress-paginate (1.1.2)
+      octopress-hooks
     parslet (1.5.0)
       blankslate (~> 2.0)
     posix-spawn (0.3.11)
@@ -86,12 +87,12 @@ GEM
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.2.0)
     rack (1.6.4)
-    rb-fsevent (0.9.5)
+    rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.3.2)
     safe_yaml (1.0.4)
-    sass (3.4.16)
+    sass (3.4.18)
     sprockets (2.12.4)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -103,11 +104,9 @@ GEM
       sprockets (~> 2.0)
       tilt (~> 1.1)
     tilt (1.4.1)
-    timers (4.0.1)
-      hitimes
     toml (0.1.2)
       parslet (~> 1.5.0)
-    uglifier (2.7.1)
+    uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     yajl-ruby (1.2.1)
@@ -121,6 +120,7 @@ DEPENDENCIES
   jekyll-assets
   jekyll-press
   jekyll-sitemap
+  octopress-paginate
   sass
   uglifier
 

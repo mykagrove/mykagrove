@@ -2,7 +2,7 @@
 @import "slick";
 
 .lazy-loading {
-	background-image: url('../img/ajax-loader.gif');
+	background-image: url('/images/ajax-loader.gif');
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -10,7 +10,7 @@
 /*
 .slick-loading {
 	display: block;
-	//background: #fff url('../img/ajax-loader.gif') center center no-repeat;
+	//background: #fff url('/images/ajax-loader.gif') center center no-repeat;
 	content: url("img/ajax-loader.gif");
 	width: 50px;
 	height: 50px;
@@ -103,7 +103,7 @@
 		color: #fff; -webkit-text-fill-color: #fff;
 
 		.n-items & {
-			color: map-get($colors, primary); -webkit-text-fill-color: map-get($colors, primary);
+			color: map-get($colors,'1'); -webkit-text-fill-color: map-get($colors,'1');
 		}
 
 		@include fs(30);
@@ -139,11 +139,15 @@
 			text-align: center;
 			> * { // img, or div if averagecolor fadeEdges
 				//@extend .full--center;
+				display: block;
 				margin-left: auto;
 				margin-right: auto;
-				max-width: $container-max-width;
+				//max-width: $container-max-width;
+				width: auto;
+				max-width: 100%;
 				img {
 					//@extend .fill;
+					@extend .full--center;
 				}
 			}
 		}
@@ -152,43 +156,6 @@
 			@extend .hidden-xs;
 			@extend .hidden-sm;
 		}
-	}
-
-	background: map-get($colors, senary);
-
-	&.match-heights--parent { // home page
-		background: none;
-	}
-
-	&--home {
-		.slick-slide {
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-			padding: $grid-gutter-width;
-			@include sm { height: auto!important; }
-
-			h1,h2,h3,p {
-				color: white;
-				text-shadow: 0 3px 3px rgba(0,0,0,0.5);
-			}
-			h1 {
-				@include res(fs,42,44,46,48);
-				padding-bottom: 10px;
-			}
-		}
-
-		// Stop match heights interfering for smaller devices
-		.match-heights--child,
-		.match-heights--grandchild {
-			@include xs-sm {
-				height: auto!important;
-			}
-		}
-	}
-
-	&--border {
-		border: 10px solid map-get($colors, senary);
 	}
 
 	&--dots--nested {
@@ -211,29 +178,29 @@
 		}
 	}
 
-	&--linked__main,
-	&--linked__thumbs {
-		background: map-get($colors, senary);
-	}
-	&--linked__thumbs {
-		//padding-bottom: $grid-gutter-width;
-		.slick-slide {
-			cursor: pointer;
+	&--linked {
+		&__wrapper {
+			position: relative;
+		}
+		&__thumbs {
+			//padding-bottom: $grid-gutter-width;
+			.slick-slide {
+				cursor: pointer;
 
-			&.slick-current {
-				position: relative;
-				&:after {
-					content: " ";
-					position: absolute;
-					top: 0; bottom: 0;
-					left: 0; right: 0; // thumbs padding
-					border: 3px solid map-get($colors, primary);
-					//box-shadow: inset 0 0 1px 2px map-get($colors, secondary);
+				&.slick-current {
+					position: relative;
+					&:after {
+						content: " ";
+						position: absolute;
+						top: 0; bottom: 0;
+						left: 0; right: 0; // thumbs padding
+						border: 3px solid map-get($colors,'1');
+						//box-shadow: inset 0 0 1px 2px map-get($colors,'2');
+					}
 				}
 			}
 		}
 	}
-
 
 	&__thumb {
 		background-repeat: no-repeat;
