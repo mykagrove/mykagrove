@@ -7,15 +7,14 @@
  */
   @import "font-awesome/font-awesome";
 
-
 @import 'vars';
 @import 'bootstrap';
 @import 'mixins';
 @import 'reset';
 @import 'lemonlace';
-@import 'codemirror/lib/codemirror';
-//@import 'codemirror/theme/night';
-@import 'codemirror/theme/vibrant-ink';
+@import 'codemirror/lib/codemirror.css';
+//@import 'codemirror/theme/night.css';
+@import 'codemirror/theme/vibrant-ink.css';
 
 @import 'ui/content';
 @import 'ui/header';
@@ -23,6 +22,7 @@
 @import 'ui/layout';
 @import 'ui/nav';
 @import 'ui/typography';
+@import 'ui/article';
 @import 'ui/galleries';
 @import 'ui/listings';
 @import 'ui/buttons';

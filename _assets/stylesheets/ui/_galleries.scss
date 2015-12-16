@@ -137,9 +137,11 @@
 		> a { display: block; }
 		> * {
 			text-align: center;
+			line-height: 0;
+			// ^ or there is whitespace below image, as it must be inline-block for the fadeEdges
 			> * { // img, or div if averagecolor fadeEdges
 				//@extend .full--center;
-				display: block;
+				display: inline-block;
 				margin-left: auto;
 				margin-right: auto;
 				//max-width: $container-max-width;

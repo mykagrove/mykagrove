@@ -190,8 +190,8 @@ function colorGalleries() {
 				fadeEdges: {
 					enabled: true,
 					edges: [
-						'right',
-						'left'
+						'left',
+						'right'
 					]
 				}
 			});

@@ -23,7 +23,7 @@ function rgbToHex(rgb) {
 			colorParent: false, // If true, set the background colour of the parent
 			fadeEdges: {
 				enabled: false,  // If true, apply an inset box-shadow to give the appearance of faded edges
-				width: 20,       // Fade properties can be set, or overridden by CSS
+				width: 20,       // Fade width can be set, or overridden by CSS
 				edges: [         // You can exclude edges from the fade by overriding this
 					'top',
 					'right',
@@ -37,13 +37,19 @@ function rgbToHex(rgb) {
 			}
 		}
 
-		// Allow given fadeEdges values to override defaults intuitively despite being in an object
-		if (typeof options !== 'undefined' && options.length && options.fadeEdges.length) {
+		// Test typeof rather than .length as they're objects
+		if (typeof options != 'undefined' &&
+			 typeof options.fadeEdges != 'undefined' &&
+			 typeof options.fadeEdges.edges != 'undefined') {
+			// Allow given fadeEdges values to override defaults intuitively despite being in any object
 			for (var key in options.fadeEdges) {
 				defaults.fadeEdges[key] = options.fadeEdges[key];
 			}
 		}
+
 		options = $.extend(true, {}, defaults, options);
+
+		//console.log(options.fadeEdges.edges)
 
 		// Create temporary image
 		var tempImage = new Image();

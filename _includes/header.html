@@ -7,6 +7,7 @@
 				</a>
 			</div>
 
+			{% comment %}inline-blocks only work like this if minified html (no whitespace){% endcomment %}
 			<div class="col-xs-12 col-sm-7 sm-plus-inline-block static">
 				<nav role="navigation" class="nav nav--primary">
 					{% comment %}
@@ -35,14 +36,15 @@
 					{% endfor %}
 
 					<a class="nav__item nav__item--about
-					{% if page.title and page.title == 'About' %} nav__item--active{% endif %}
-					" href="/about/"><i class="fa fa-user"></i>Info</a>
+					{% if page.title and page.title == 'Info' %} nav__item--active{% endif %}
+					" href="/info/"><i class="fa fa-user"></i>Info</a>
 					<a class="nav__item nav__item--contact
 					{% if page.title and page.title == 'Contact' %} nav__item--active{% endif %}
 					" href="/contact/"><i class="fa fa-comments-o"></i>Contact</a>
 				</nav>
 			</div>
 
+			{% comment %}inline-blocks only work like this if minified html (no whitespace){% endcomment %}
 			<div class="col-xs-6 col-sm-3 header__social inline-block">
 				{% include social_links.html %}
 			</div>

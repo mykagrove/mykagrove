@@ -5,21 +5,10 @@ description: "Michael Cook's Projects and Assorted Whatnots"
 baseurl:     ""
 url:         "http://m.ichael.co.uk"
 timezone:    Europe/London
-# include: .htaccess (not included by default)
+
+# Files to go into _site
+# include: .htaccess (if ever needed, not included by default)
 exclude:     ["*.bat", "README_*", "NOTE_*", "node_modules", "gemfile", "Gemfile.lock", "bower_components", "*.sh"]
-#keep_files:  ["_assets/images"]
-
-# Stop publishing of future-dated posts
-future: false
-
-# Google analytics
-google_analytics:
-
-# Optional features
-animated:           false
-show_related_posts: false
-show_post_footers:  false
-show_social_icons:  false
 
 # Social
 github: entozoon
@@ -27,53 +16,49 @@ twitter: entozoon
 linkedin: michaelmorgancook
 email: michael@m.ichael.co.uk
 
-# Post sharing icons
-show_sharing_icons: false
-share_text: 'Share this post!'
-# Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: false
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
-
 # Build settings
 excerpt_separator: <!--readmore-->
-markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
-paginate:     4
-pagination:
-  limit: false
-  per_page: 2
+#markdown: kramdown
+#redcarpet:
+  #extensions: ['smart', 'tables', 'with_toc_data', 'hard_wrap']
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
+permalink: /:categories/:title.html
+
+# Stop publishing of future-dated posts
+future: false
 
 sass:
 #  style: compressed
   style: nested
 gems:
- - 'jekyll-sitemap'
  - 'jekyll-press'
 
 assets:
-  cache: true
-  # put checksum onto filenames. alternative is 'none'.
-  # prevents local cache as well as hotlinking and access to original image
-  cachebust: hard
-  js_compressor:  uglifier
-  css_compressor: sass
-
-#assets:
-#  prefix: "/_assets"
-#  assets:
-#    - "*.jpg"
-#  digest: true
-#  sources:
-#    - "_assets/stylesheets"
-#    - "_assets/javascripts"
-#    - "_assets/images"
-#    - "_assets/img"
+  compress:
+    css: true
+    js: true
+#  cache: false | directory | default: .asset-cache
+  cache: .asset-cache
+#  cdn: https://cdn.example.com
+#  skip_baseurl_with_cdn: false
+#   skip_prefix_with_cdn: false
+#  prefix: "/assets"
+  assets:
+#    - "*.png"
+    - "site.css"
+  digest: false
+  sources:
+#    - _assets/css
+#    - _assets/images
+    - _assets/img
+    - _assets/js
+    - _assets/stylesheets
+#    - _assets/javascripts
+#    - _assets/fonts
+#  features:
+#    automatic_img_size: true | false | default: true
+#    automatic_img_alt : true | false | default: true
