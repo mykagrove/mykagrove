@@ -61,7 +61,7 @@ Inline code blocks too ``function proper() { console.log('code blocks'); }``
 
 
 Testing project layout.
-
+{% comment %}
 ### When adding images use the assets like a baws:
 {{ 'test.jpg' | img : "magick:0.25x magick:quality:50" }}
 {{ 'test.jpg' | img : "magick:resize:100x100" }}
@@ -77,6 +77,7 @@ Testing project layout.
 {{ 'test.jpg' | img : "magick:resize:25%" }}
 ### Can link to asset files like:
 {{ 'test.jpg' | asset_path }}
+{% endcomment %}
 
 https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
 

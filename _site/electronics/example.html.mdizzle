@@ -46,8 +46,6 @@
 						
 					
 						
-					
-						
 							<a class="nav__item nav__item--electronics
 							
 								nav__item--active
@@ -248,21 +246,6 @@ Inline code blocks too ``function proper() { console.log('code blocks'); }``
 
 Testing project layout.
 
-### When adding images use the assets like a baws:
-<img src="/assets/test-a96c47a07782794cfa97172f37ce5e7aa36a2f023c4eb08404cf830e0ec9b38f.jpg" magick="0.25x" width="425" height="319" alt="test-a96c47a07782794cfa97172f37ce5e7aa36a2f023c4eb08404cf830e0ec9b38f.jpg">
-<img src="/assets/test-4e1414b901c994ea0848637c0cfe9e6fd5ca68680a65691f7de3850e4db5401c.jpg" width="100" height="75" alt="test-4e1414b901c994ea0848637c0cfe9e6fd5ca68680a65691f7de3850e4db5401c.jpg">
-<img src="/assets/test-5eef672ce1cc4f4fd4400435bc63eb2093e6f4888dda48417c79f4ee738ef6c9.jpg" width="425" height="319" alt="test-5eef672ce1cc4f4fd4400435bc63eb2093e6f4888dda48417c79f4ee738ef6c9.jpg">
-<img src="/assets/test-4e1414b901c994ea0848637c0cfe9e6fd5ca68680a65691f7de3850e4db5401c.jpg" width="100" height="75" alt="test-4e1414b901c994ea0848637c0cfe9e6fd5ca68680a65691f7de3850e4db5401c.jpg">
-#### Pixels (contain)
-<img src="/assets/test-ce8b5a8a1d9d17e1339c81ce3e5eb72c1aa520438409dc97ed6786fa167b7a6f.jpg" width="50" height="38" alt="test-ce8b5a8a1d9d17e1339c81ce3e5eb72c1aa520438409dc97ed6786fa167b7a6f.jpg">
-#### Pixels (cover)
-<img src="/assets/test-2ceb4465bf9ef966205ac7708d96a29399fc8a0d2ecc754cb3eb30be69ca9c39.jpg" width="67" height="50" alt="test-2ceb4465bf9ef966205ac7708d96a29399fc8a0d2ecc754cb3eb30be69ca9c39.jpg">
-#### Pixels (force)
-<img src="/assets/test-f36087a3907385f4ca46ab228c8afa53b781c5ed1e2372ac791702fd64bcd748.jpg" width="50" height="50" alt="test-f36087a3907385f4ca46ab228c8afa53b781c5ed1e2372ac791702fd64bcd748.jpg">
-#### Percent (contain)
-<img src="/assets/test-043f7ddb7238eb78c8fb1fda8db15e4d68cf3a21da6d80d00616ff3469b4947c.jpg" width="106" height="80" alt="test-043f7ddb7238eb78c8fb1fda8db15e4d68cf3a21da6d80d00616ff3469b4947c.jpg">
-### Can link to asset files like:
-/assets/test.jpg
 
 https://github.com/jekyll-assets/jekyll-assets/tree/legacy#jekyllassets
 
