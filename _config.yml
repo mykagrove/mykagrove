@@ -8,7 +8,7 @@ timezone:    Europe/London
 
 # Files to go into _site
 # include: .htaccess (if ever needed, not included by default)
-exclude:     ["*.bat", "README_*", "NOTE_*", "node_modules", "gemfile", "Gemfile.lock", "bower_components", "*.sh"]
+exclude:     ["*.bat", "README_*", "NOTE_*", "node_modules", "gemfile", "Gemfile.lock", "bower_components", "*.sh", "*.example"]
 
 # Social
 github: entozoon
