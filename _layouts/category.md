@@ -1,13 +1,10 @@
 ---
 layout: default
-paginate: true
 ---
 
 {% comment %}
-dwa
-{{ page.category }}
+	{{ page.category }}
 	{{ site.categories[page.category] | inspect }}
-dwa
 {% endcomment %}
 
 <div class="container-fluid">
@@ -15,9 +12,6 @@ dwa
 		<div class="col-xs-12">
 			<div class="posts">
 				{% for post in site.categories[page.category] %}
-{% comment %}
-					{{ post }}
-{% endcomment %}
 					{% include listing.html %}
 				{% endfor %}
 			</div>
