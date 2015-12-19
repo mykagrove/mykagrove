@@ -42,12 +42,6 @@ Cinebox is a small device that shows local movie theatre listings. It's microcon
 If I were to build this again, I wouldn't use an Arduino at all. I realised during the course of the project that it is actually much slower than the ESP8266 and has less memory, which was actually a big deal when coding intro graphic arrays.
 If I were to use a different ESP8266 model such as the ESP-03 which has a whole bunch of inputs and outputs, I reckon it could run the whole program and update the screen pretty much instantly and with high quality images rather than the god-knows-how-many seconds it currently takes.
 
-one
-two
-three
-
-
-
 
 
 ## Pass or Fail?

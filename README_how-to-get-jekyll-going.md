@@ -165,6 +165,8 @@ sudo apt-get install ruby2.2-dev
 
 rvm use 2.2.2 --default
 
+sudo reboot
+
 # Make sure jekyll is installed with sudo (it's a thing)
 
 sudo gem install jekyll

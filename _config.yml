@@ -34,8 +34,34 @@ future: false
 sass:
 #  style: compressed
   style: nested
-gems:
- - 'jekyll-press'
+
+
+#jekyll-press:
+#  exclude: 'atom.xml' # Exclude files from processing - file name, glob pattern or array of file names and glob patterns
+#  js_options: {}      # js minifier options
+#  css_options: {}     # css minifier options
+#  html_options: {}    # html minifier options
+
+# (temporarily?) removing jekyll-press as it doesn't compile posts properly, issue queried:
+# https://github.com/stereobooster/jekyll-press/issues/25
+#gems:
+#  - octopress-minify-html
+#html_press:
+#  unquoted_attributes: false
+#  drop_empty_values: false
+#  strip_crlf: false
+#  js_minifier_options: false
+# Update: Can't get this working either, trying to go down the compress.html route
+compress_html:
+  #clippings: [div, p, ul, td, h1, h2]
+  clippings: all # fully clip all whitespace around elements, yolo right?
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
 
 assets:
   compress:

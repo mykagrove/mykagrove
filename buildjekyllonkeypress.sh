@@ -5,3 +5,4 @@ do
 	read -n1 -r -p $'\n\n Press any key to build... \n' key
 	time jekyll build
 done
+
