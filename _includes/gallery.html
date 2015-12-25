@@ -6,7 +6,11 @@
 <div class="gallery gallery--linked__main" style="display:none">
 {% for image in page.gallery-images %}
 <div>
-	<a href="{{ image.file | append: ' [resize:1230x690]' | asset_path }}">
+	<a href="
+		{% if image.link %}{{ image.link }}{% else %}
+		{{ image.file | append: ' [resize:1230x690]' | asset_path }}
+		{% endif %}
+	">
 		<img src="{{ image.file | append: ' [resize:1230x690]' | asset_path }}" alt="{{ image.alt }}" />
 	</a>
 </div>

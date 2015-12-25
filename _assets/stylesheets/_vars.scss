@@ -21,9 +21,19 @@ $colors: (
 // Add in our nice adjusted background color
 $colors: map-merge($colors, ("bg": adjust-color(map-get($colors,'1'), $lightness: -15%, $saturation: -35%)));
 
-$link-hover-decoration: none; // default is underline, which is daft when <a> are none by default
 $brand-primary: map-get($colors,'1');
-$headings-color: map-get($colors,'4');
+$headings-color: map-get($colors,'1');
+
+$line-height-base: 1.5; // default
+$font-size-base: 14px;
+
+$text-color: map-get($colors, '3');
+$link-color: map-get($colors, '1');
+
+//$link-hover-decoration: none; // default is underline, which is daft when <a> are none by default
+
+$link-hover-color: adjust-color($brand-primary, $lightness: -25%);
+
 
 // Generate .color--primary, .background--primary, etc style classes
 @each $key, $value in $colors {

@@ -186,6 +186,19 @@
 	}
 }
 
+/*
+ * Attention states, set them all in one go! (usage below)
+ */
+$attention: "&:focus, &:hover, &:active";
+/* Usage:
+.foo {
+        #{$attention} {
+                color: red;
+        }
+}
+ */
+
+
 /**
  * Function to show appropriate retina images when suitable
  * e.g. @include retina('../images/loading', 200px, 100px, 'gif');
