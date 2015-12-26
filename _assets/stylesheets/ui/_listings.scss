@@ -1,5 +1,5 @@
 
-// Must admit, these mixin names are getting a bit like, wonder if I can namespace them..?
+// Must admit, these mixin names are getting a bit lengthy, wonder if I can namespace them..?
 @mixin listing__image__inner--reset--shadow--soft {
 	// default version of that in hoverlistings()
 	box-shadow: inset 0px 0px 30px 1px rgba(255,255,255,0.5),
@@ -19,11 +19,27 @@
 }
 .listing__image__inner--reset--shadow--soft { @include listing__image__inner--reset--shadow--soft; }
 .listing__image__inner--reset--shadow--hard { @include listing__image__inner--reset--shadow--hard; }
-.listing__image__inner--reset--transform { @include listing__image__inner--reset--transform; }
+.listing__image__inner--reset--transform    { @include listing__image__inner--reset--transform; }
+
+@mixin pseudoBorder($position:bottom) {
+	position: relative;
+	&:after {
+		display: block;
+		content: " ";
+		position: absolute;
+		left: 0;
+		right: 0;
+		#{$position}: 0;
+		height: 1px;
+		border-bottom: 2px solid;
+		border-color: inherit;
+		opacity: 0.5;
+	}
+}
 
 .listing {
-	position: relative;
-	border-top: 2px solid map-get($colors,'1');
+	//border-top: 2px solid map-get($colors,'2'); // color overriden by colorListings()
+	@include pseudoBorder(top);
 	padding-top: $grid-gutter-width;
 	padding-bottom: $grid-gutter-width;
 
@@ -32,7 +48,26 @@
 
 	h2 {
 		padding-bottom: 0;
+		line-height: 1.1;
+		margin-bottom: $grid-gutter-width * 0.5;
+		a {
+			position: relative;
+			display: inline-block;
+			text-decoration: none;
+			//border-bottom: 1px solid;
+			border: none;
+			// actually, let's be clever as fleek, use a pseudo element to inherit
+			// border color, so as to be able to influence it's opacity
+			@include pseudoBorder;
+			#{$attention} {
+				color: $link-hover-color;
+				&:after {
+					border-color: $link-hover-color;
+				}
+			}
+		}
 	}
+	&__hidden { display: none; } // excerpt items to be hidden in listings
 	&__summary {
 		@include fs(16);
 		padding: 0;

@@ -222,10 +222,16 @@ function colorListings() {
 					average.hex = rgbToHex(average);
 				}
 
+				// Apply to listing border color
 				listing.css('border-color', average.hex);
-				if (listing.find('h1,h2').length) {
-					listing.find('h1,h2').css('color', average.hex);
-				}
+
+				// Apply to header color
+				listing.find('h1,h2').length &&
+				listing.find('h1,h2').css('color', average.hex);
+
+				// Apply to header background
+				listing.find('h1 a,h2 a').length &&
+				listing.find('h1 a,h2 a').css('border-color', average.hex);
 			}
 		}
 		if (listing.find('h1,h2').length) { listing.find('h1,h2').show(); } // hidden by css
