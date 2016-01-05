@@ -92,14 +92,6 @@ $nav__fa--bottom: adjust-color(map-get($colors,'4'), $lightness: 35%, $saturatio
 
 	&__social {
 		text-align: right;
-		.social {
-			margin: 0;
-			@include res(fs,inherit,22,24,30);
-			li {
-				display: inline-block;
-			}
-		}
-
 		@include xs {
 			position: absolute;
 			top: 50%;

@@ -8,6 +8,7 @@ body {
 	@include linear-gradient(black, map-get($colors, bg), top);
 	border-top: 2px solid $motd--top;
 	color: $motd--top;
+	min-height: 114px;
 
 	> .container-fluid {
 		padding-top: $grid-gutter-width*0.75;

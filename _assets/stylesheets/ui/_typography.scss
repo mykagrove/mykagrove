@@ -14,7 +14,7 @@ h1,.h1,
 h2,.h2,
 h3,.h3 {
 	margin: 0;
-	padding-bottom: $grid-gutter-width;
+	padding: 0 0 $grid-gutter-width * 0.5;
 	a {
 		color: inherit;
 		// Simple lower opacity hover, copes well with the colorListings js.
@@ -34,11 +34,17 @@ h3,.h3 {
 	}
 }
 
+
 h1,.h1,
 h2,.h2,
 h3,.h3 {
 	color: map-get($colors,'4');
 	a:hover {
 		//color: adjust-color(map-get($colors,'4'), $lightness: -10%, $saturation: 10%);
+	}
+
+	// If the header proceeds another element, pad the top
+	* + & {
+		padding-top: $grid-gutter-width;
 	}
 }

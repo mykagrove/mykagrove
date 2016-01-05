@@ -5,6 +5,7 @@ description: "Michael Cook's Projects and Assorted Whatnots"
 baseurl:     ""
 url:         "http://m.ichael.co.uk"
 timezone:    Europe/London
+encoding:    UTF-8
 
 # Files to go into _site
 # include: .htaccess (if ever needed, not included by default)
@@ -26,6 +27,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: true
+  smart_quotes: ["apos", "apos", "quot", "quot"]
 permalink: /:categories/:title.html
 
 # Stop publishing of future-dated posts

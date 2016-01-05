@@ -1,0 +1,14 @@
+
+.social {
+	margin: 0;
+	padding: 0;
+	@include res(fs,inherit,22,24,30);
+	li {
+		display: inline-block;
+		a {
+			#{$attention} {
+				text-decoration: none;
+			}
+		}
+	}
+}
