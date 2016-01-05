@@ -67,7 +67,7 @@
 			}
 		}
 	}
-	&__hidden { display: none; } // excerpt items to be hidden in listings
+	&  &__hidden { display: none; } // excerpt items to be hidden in listings
 	&__summary {
 		@include fs(16);
 		padding: 0;
