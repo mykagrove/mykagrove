@@ -28,7 +28,7 @@ kramdown:
   input: GFM
   hard_wrap: true
   smart_quotes: ["apos", "apos", "quot", "quot"]
-permalink: /:categories/:title.html
+permalink: /:categories/:title/
 
 # Stop publishing of future-dated posts
 future: false

@@ -16,12 +16,10 @@ layout: default
 					<div id="disqus_thread"></div>
 					<script>
 					var disqus_config = function () {
-						this.page.url = "{{ page.url }}";  /* Replace PAGE_URL with your page's canonical URL variable */
-						this.page.identifier = "{{ page.title }}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable*/
+						this.page.url = "{{site.url}}{{ page.url }}";  /* e.g. http://example.com/category/post-name */
+						this.page.identifier = "{{ page.url }}"; /* anything unique e.g. /category/post-name/ */
 					};
 					(function() {
-					var disqus_developer = 1; /* for local testing! */
-
 					var d = document, s = d.createElement('script');
 
 					s.src = '//mykagrove.disqus.com/embed.js';
