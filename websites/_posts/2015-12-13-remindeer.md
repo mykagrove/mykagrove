@@ -27,8 +27,8 @@ Whether you want to be reminded in two days, or two years.. you can trust Remind
 
 
 ## Method
-This was something I personally needed in my life, so I just started working away until it became something usable.
-Ideally it'd sent the message by a few methods such as SMS and originally it had an incredible Snapchat option (if I do say so myself!) I'd built, where it created an image containing the text of your message and sent that over Snapchat. They've since removed all the API functionality so, sadly, that had to be removed.
+This was a service I needed in my life, so I just started working away until it became something usable.
+Ideally it'd sent the message by a few other methods such as SMS and originally it had an incredible Snapchat option (if I do say so myself!) that I'd built, where it created an image containing the text of your message and sent that over Snapchat. They've since removed all the API functionality so, sadly, that had to be removed.
 
 
 ## Conclusions

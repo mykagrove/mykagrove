@@ -33,6 +33,9 @@ permalink: /:categories/:title.html
 # Stop publishing of future-dated posts
 future: false
 
+# Comments
+comments: true
+
 sass:
 #  style: compressed
   style: nested
